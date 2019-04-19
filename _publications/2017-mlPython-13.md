@@ -6,5 +6,5 @@ excerpt: ''
 date: 2017-1-1
 venue: 'Boston Area Architecture Workshop'
 paperurl: ''
-citation: ''
+citation: 
 ---
