@@ -6,5 +6,5 @@ excerpt: ''
 date: 2015-1-1
 venue: 'the 6th Annual Boston Area Architecture Workshop'
 paperurl: ''
-citation: 
+citation: ''
 ---
