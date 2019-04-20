@@ -1,11 +1,12 @@
 ---
 title: "Portable Performance for Monte Carlo Simulation of Photon Migration in 3D Turbid Media for Single and Multiple GPUs"
 collection: talks
-type: "Talk"
-permalink: /talks/2016-gtc-2
-venue: "GTC 2016"
-date: 2016-01-01
-location: "Silicon Valley CA, USA"
+type: "Porjects"
+permalink: /projects/2014-protect-1
+venue: "Northeastern University"
+date: 2014-01-01
+location: "Boston"
 ---
-[presentation](http://on-demand.gputechconf.com/gtc/2016/presentation/s6635-paravecino-portable-performance-monte-carlo-simulation-photon-migration-3d-turbid-media-gpus.pdf)
+
+[More](https://web.northeastern.edu/protect/research/data-management-and-modeling-core/)
 
