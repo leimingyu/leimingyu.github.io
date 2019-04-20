@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.S. in Electrical Engineering, Shanghai Maritime University, Shanghai, China, 2006
+* M.S. in Electrical Engineering, University of Bridgeport, CT, USA, 2010
+* Ph.D in Computer Engineering, Northeastern University, MA, USA, 2019 
 
 Work experience
 ======
@@ -54,6 +54,7 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+
+#Service and leadership
+#======
+#* Currently signed in to 43 different slack teams
