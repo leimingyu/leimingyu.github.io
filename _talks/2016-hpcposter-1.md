@@ -1,7 +1,7 @@
 ---
 title: "Monte Carlo Simulation of photon migration in 3D turbid media"
 collection: talks
-type: "Talk"
+type: "Poster"
 permalink: /talks/2016-hpcposter-1
 venue: "HPC Day 2016"
 date: 2012-03-01
