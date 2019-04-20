@@ -11,7 +11,7 @@ The National Institute of Environmental Health Sciences supported Super-Fund Res
 
 ![protect overview](https://leimingyu.github.io/images/projects/protect_schematic.jpg)
 
-I am the database administrator (2014-206) for the Data Management and Modeling Core (Core D). I am responsible for the following tasks.
+I am the database administrator (2014-2016) for the Data Management and Modeling Core (Core D). I am responsible for the following tasks.
 
 * Provide domain specific upload formats and on-demand data exports
 * Maintain data integrity and featured dependencies
