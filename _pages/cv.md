@@ -1,12 +1,11 @@
 ---
 layout: archive
-title: "CV"
+title: "CV" [pdf](https://leimingyu.github.io/files/LeimingYu_CV.pdf)
 permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
 ---
-[Download CV](https://leimingyu.github.io/files/LeimingYu_CV.pdf)
 
 {% include base_path %}
 
