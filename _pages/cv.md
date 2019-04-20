@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* B.S. in Electrical Engineering, Shanghai Maritime University, Shanghai, China, 2006
+* B.S. in Electrical Engineering, Shanghai Maritime University, China, 2006
 * M.S. in Electrical Engineering, University of Bridgeport, CT, USA, 2010
 * Ph.D in Computer Engineering, Northeastern University, MA, USA, 2019 
 
@@ -27,14 +27,13 @@ Work experience
   * Duties included: Merging pull requests
   * Supervisor: Professor Hub
   
-Skills
+Awards
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Student Travel Grant : IISWC 2017 
+* Student Travel Grant: PPoPP 2015
+* Best Poster: HPC Day 2017
+* Best Poster: HPC Day 2016
+
 
 Publications
 ======
@@ -55,6 +54,3 @@ Teaching
   {% endfor %}</ul>
   
 
-#Service and leadership
-#======
-#* Currently signed in to 43 different slack teams
