@@ -18,12 +18,12 @@ Education
 
 Work experience
 ======
-* July - Dec 2016: Internship at MERL 
+* July - Dec 2016: Internship at **MERL **
   * Optimized Model Predictive Control solvers (PQP and ADMM) on NVIDIA Jetson TX1 
   * Developed efficient SGEMV kernels that outperform cuBLAS on NVIDIA Jetson TX1
   * Developed mpcCUDA, GPU-accelerated Model Predictive Control solvers in Matlab 
 
-* Summer 2012: Internship at Mathworks 
+* Summer 2012: Internship at **Mathworks** 
   * Accelerated PSK Demodulator/Modulator on GPU 
   * Accelerated LDPC Decoder for Large Parity Check Matrix on GPU 
   * Improved the parfor section in commViterbiSystemGPU demo
