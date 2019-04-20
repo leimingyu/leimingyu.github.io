@@ -18,15 +18,16 @@ Education
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* July - Dec 2016: Internship at MERL 
+  * Optimized Model Predictive Control solvers (PQP and ADMM) on NVIDIA Jetson TX1 
+  * Developed efficient SGEMV kernels that outperform cuBLAS on NVIDIA Jetson TX1
+  * Developed mpcCUDA, GPU-accelerated Model Predictive Control solvers in Matlab 
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Summer 2012: Internship at Mathworks 
+  * Accelerated PSK Demodulator/Modulator on GPU 
+  * Accelerated LDPC Decoder for Large Parity Check Matrix on GPU 
+  * Improved the parfor section in commViterbiSystemGPU demo
+  * Accelerated Turbodecoder on Matlab Distributed Computing Server (MDCS)
   
 Awards
 ======
