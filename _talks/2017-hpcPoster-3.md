@@ -1,13 +1,11 @@
 ---
-title: "Talk 2 on Relevant Topic in Your Field"
+title: "Model-based Concurrent Kerenel Execution on GPU"
 collection: talks
-type: "Talk"
-permalink: /talks/2014-02-01-talk-2
-venue: "London School of Testing"
-date: 2014-02-01
-location: "London, UK"
+type: "Poster"
+permalink: /talks/2017-hpcPoster-3
+venue: "HPC Day 2017"
+date: 2017-01-01
+location: "UMass Dartmouth, MA, USA"
 ---
 
-[More information here](http://example2.com)
-
-This is a description of your talk, which is a markdown files that can be all markdown-ified like any other post. Yay markdown!
+[presentation](https://leimingyu.github.io/files/posters/HPCDay2017_CKE_final.pdf)
