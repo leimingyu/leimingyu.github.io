@@ -7,4 +7,4 @@ venue: "HPC Day 2016"
 date: 2012-03-01
 location: "UMass Dartmouth, MA"
 ---
-[link](http://cscvr1.umassd.edu/news_hpcday2016.html)
+[website](http://cscvr1.umassd.edu/news_hpcday2016.html)
