@@ -8,7 +8,7 @@ date: 2014-01-01
 location: "Boston"
 ---
 
-![protect overview](https://leimingyu.github.io/images/projects/protect_schematic.jpg)
+![protect overview](https://leimingyu.github.io/images/projects/protect_schematic.jpg =500x)
 
 The National Institute of Environmental Health Sciences supported Super-Fund Research Program, Puerto Rico Test-site for Exploring Contamination Threats (PROTECT) is a large multi-institution program that investigates the role environmental pollutants play in preterm birth, a major factor causing over one-third of infant deaths in USA.
 
