@@ -1,7 +1,7 @@
 ---
 title: "Data Management and Modeling for PROTECT"
-collection: talks
-type: "Porjects"
+collection: projects 
+type: "Projects"
 permalink: /projects/2014-protect-1
 venue: "Northeastern University"
 date: 2014-01-01
