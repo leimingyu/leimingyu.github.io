@@ -36,6 +36,12 @@ Awards
 * Best Poster: HPC Day 2017
 * Best Poster: HPC Day 2016
 
+Peer Review
+======
+* Parallel, Distributed and Network-based Processing (PDP), 2016
+* Simulation Modelling Practice and Theory (Elsevier Journal), 2018
+
+
 
 Publications
 ======
