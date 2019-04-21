@@ -5,6 +5,6 @@ venue: 'Udacity'
 collection: certifications 
 ---
 
-Coursera, Aug 2015
+Udacity, Aug 2015
 
 ![](https://leimingyu.github.io/files/certs/udacity-ipp.png)
