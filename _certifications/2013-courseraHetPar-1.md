@@ -5,6 +5,6 @@ venue: 'Coursera'
 collection: certifications 
 ---
 
-Coursera 2013
+Coursera, Feb 2013
 
 ![](https://leimingyu.github.io/files/certs/coursera-hpp.png)
