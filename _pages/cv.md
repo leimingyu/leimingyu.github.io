@@ -6,7 +6,7 @@ author_profile: true
 redirect_from:
   - /resume
 ---
-[Download](https://leimingyu.github.io/files/LeimingYu_CV.pdf)
+[Download](https://leimingyu.github.io/files/LeimingYu_resume.pdf)
 
 {% include base_path %}
 
