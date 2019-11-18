@@ -20,6 +20,10 @@ Education
 
 Work experience
 ======
+* July 2019 - Present: Imaging Engineer at **Analogic** 
+  * Implement and optimize Computed Tomography related algorithms on GPUs 
+  * Image Quality verification
+
 * July - Dec 2016: Internship at **MERL**
   * Optimized Model Predictive Control solvers (PQP and ADMM) on NVIDIA Jetson TX1 
   * Developed efficient SGEMV kernels that outperform cuBLAS on NVIDIA Jetson TX1
