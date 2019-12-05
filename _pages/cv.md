@@ -49,6 +49,7 @@ Peer Review
 * Parallel, Distributed and Network-based Processing (PDP), 2016
 * Simulation Modelling Practice and Theory (Elsevier Journal), 2018
 * IEEE Transactions on Computers(TCSI), 2019
+* Journal of Parallel and Distributed Computing (JPDC), 2019 
 
 
 Talks
