@@ -85,19 +85,15 @@ author:
   avatar           : "leiming.png"
   bio              : "智行感恩"
   location         : "Boston,MA,USA"
-  employer         :
-  #pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  employer         : Analogic Corperation
   googlescholar    : "https://scholar.google.com/citations?user=d1IEkD8AAAAJ&hl=en"
   email            : leimingyu830@gmail.com
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
   bitbucket        :
   github           : "leimingyu"
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   linkedin         : "leimingyu"
   #orcid            : "http://orcid.org/yourorcidurl"
-  pinterest        :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   twitter          : "yu_leiming"
   youtube          :
