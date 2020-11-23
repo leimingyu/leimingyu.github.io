@@ -1,0 +1,25 @@
+//---------------//
+Set up on ubuntu
+//---------------//
+
+1. install ruby 2.0 
+
+2. install jekyll
+
+$sudo apt-get install ruby ruby-dev make gcc nodejs
+$sudo gem install jekyll bundler
+
+
+3. launch local website
+
+$bundle exec jekyll serve
+Control + c
+
+$jekyll serve --detach
+
+Now browse to http://localhost:4000
+
+Edit _config.yml file that tells Jekyll some basics about your project.
+
+If you made changes and want to check the results, you can run the following cmd again. 
+$jekyll serve --detach
