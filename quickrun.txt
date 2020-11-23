@@ -4,6 +4,7 @@ Set up on ubuntu
 
 1. install ruby 2.0 
 
+
 2. install jekyll
 
 $sudo apt-get install ruby ruby-dev make gcc nodejs
@@ -23,3 +24,11 @@ Edit _config.yml file that tells Jekyll some basics about your project.
 
 If you made changes and want to check the results, you can run the following cmd again. 
 $jekyll serve --detach
+
+
+4. change font size of highlighted section 
+
+Edit _sass/_syntax.scss, in the .highlight {} section, change the font-size 
+I use type-size-5 for better visualization. 
+The type-size-7 is the smallest supported font size. You can decrease the number
+to increase the font size.
