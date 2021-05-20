@@ -13,6 +13,8 @@ $sudo gem install jekyll bundler
 
 3. launch local website
 
+$bundle install
+
 $bundle exec jekyll serve
 Control + c
 
