@@ -20,8 +20,7 @@ You can visit your website on : http://127.0.0.1:4000/
 
 Edit _config.yml file that tells Jekyll some basics about your project.
 
-If you made changes and want to check the results, you can rerun the folllowing command.
-$bundle exec jekyll serve
+After your edits, wait for a couple of seconds, refresh your browser for the changes. 
 
 
 4. change font size of highlighted section 
