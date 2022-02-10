@@ -21,13 +21,16 @@ Education
 Work experience
 ======
 * July 2019 - Present: Imaging Engineer at **Analogic** 
+  * Artificial Intelligence (AI) image reconstruction 
+  * Reduce cost for production computers 
   * Implement and optimize Computed Tomography related algorithms on GPUs 
 	* Metal Artifact Reduction
 	* Extended Field of View
-  * OS hardening for Reconstruction (RC) software and Service Console (SC) 
-	* Install CentOS 8 for long term support 
-	* Address issues to support RC/SC on CentOS
-	* Use Clonezilla to backup and reinstall OS
+  * GPU Evaluation and Image Quality Evaluation 
+  * OS hardening for Image Reconstruction software
+	* OS : CentOS/RHEL
+	* Backup/Reinstall : Clonezilla
+	* Vulnerability Scanning Tool : Nessus
 
 * July - Dec 2016: Internship at **MERL**
   * Optimized Model Predictive Control solvers (PQP and ADMM) on NVIDIA Jetson TX1 
