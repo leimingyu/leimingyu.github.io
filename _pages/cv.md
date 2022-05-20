@@ -21,16 +21,13 @@ Education
 Work experience
 ======
 * July 2019 - Present: Imaging Engineer at **Analogic** 
-  * Artificial Intelligence (AI) image reconstruction 
-  * Reduce cost for production computers 
-  * Implement and optimize Computed Tomography related algorithms on GPUs 
-	* Metal Artifact Reduction
-	* Extended Field of View
-  * GPU Evaluation and Image Quality Evaluation 
-  * OS hardening for Image Reconstruction software
-	* OS : CentOS/RHEL
-	* Backup/Reinstall : Clonezilla
-	* Vulnerability Scanning Tool : Nessus
+  * Optimize Computed Tomography related algorithms on GPUs 
+	* Improve Metal Artifact Reduction by 12x
+	* Improve Extended Field of View by 70x
+  * Optimize CT algorithms to run a single GPU, rather than two, saving production cost
+  * Integrate Deep Learning Models in the Recon Software for future CT systems 
+  * Evaluate Operating Systems for future CT scanners 
+  * GPU Evaluation and Image Quality Evaluation for recon software releases
 
 * July - Dec 2016: Internship at **MERL**
   * Optimized Model Predictive Control solvers (PQP and ADMM) on NVIDIA Jetson TX1 
