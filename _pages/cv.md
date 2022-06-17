@@ -47,6 +47,7 @@ Awards
 * Student Travel Grant: PPoPP 2015
 * Best Poster: HPC Day 2017
 * Best Poster: HPC Day 2016
+* GE Hackathon Challenge: ["Most Robust"](https://www.khoury.northeastern.edu/ge-hackathon-challenge/) Winner 2017 
 
 
 Peer Review
