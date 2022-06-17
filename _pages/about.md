@@ -10,6 +10,9 @@ redirect_from:
 
 I am currently working full-time as Imaging Engineer at [Analogic](https://www.analogic.com/).
 
+I’m passionate about parallel computing and high-performance computing.
+I am specialized in optimizing complex algorithms on Graphics Processing Units (GPUs).
+I have worked on embedded systems, multi-GPU systems, and GPU-based clouds. I have knowledge in computer architecture, machine learning, deep learning, and medical imaging due to various projects I have been involved in.
 
 I received my Ph.D from Northeastern University.
 I performed doctoral research in the Northeastern University Computer Architecture Research Lab ([NUCAR](https://ece.northeastern.edu/groups/nucar/research.html)),
