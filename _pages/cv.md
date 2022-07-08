@@ -11,13 +11,6 @@ redirect_from:
 {% include base_path %}
 
 
-Education
-======
-* B.S. in Electrical Engineering, Shanghai Maritime University, China, 2006
-* M.S. in Electrical Engineering, University of Bridgeport, CT, USA, 2010
-* Ph.D in Computer Engineering, Northeastern University, MA, USA, 2019 
-
-
 Work experience
 ======
 * July 2019 - Present: Imaging Engineer at **Analogic** 
@@ -39,24 +32,27 @@ Work experience
   * Accelerated LDPC Decoder for Large Parity Check Matrix on GPU 
   * Improved the parfor section in commViterbiSystemGPU demo
   * Accelerated Turbodecoder on Matlab Distributed Computing Server (MDCS)
-  
 
 Awards
 ======
-* Student Travel Grant : IISWC 2017 
-* Student Travel Grant: PPoPP 2015
 * Best Poster: HPC Day 2017
 * Best Poster: HPC Day 2016
 * GE Hackathon Challenge: ["Most Robust"](https://www.khoury.northeastern.edu/ge-hackathon-challenge/) Winner 2017 
-
+* Student Travel Grant : IISWC 2017 
+* Student Travel Grant: PPoPP 2015
 
 Peer Review
 ======
-* Parallel, Distributed and Network-based Processing (PDP), 2016
-* Simulation Modelling Practice and Theory (Elsevier Journal), 2018
-* IEEE Transactions on Computers(TCSI), 2019
 * Journal of Parallel and Distributed Computing (JPDC), 2019 
+* IEEE Transactions on Computers(TCSI), 2019
+* Simulation Modelling Practice and Theory (Elsevier Journal), 2018
+* Parallel, Distributed and Network-based Processing (PDP), 2016
 
+Education
+======
+* Ph.D in Computer Engineering, Northeastern University, MA, USA, 2019 
+* M.S. in Electrical Engineering, University of Bridgeport, CT, USA, 2010
+* B.S. in Electrical Engineering, Shanghai Maritime University, China, 2006
 
 Talks
 ======
