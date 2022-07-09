@@ -13,21 +13,21 @@ redirect_from:
 
 Work experience
 ======
-* July 2019 - Present: Imaging Engineer at **Analogic** 
+* July 2019 - Present: **Analogic** 
   * Optimize Computed Tomography related algorithms on GPUs 
 	* Improve Metal Artifact Reduction by 12x
 	* Improve Extended Field of View by 70x
   * Optimize CT algorithms to run a single GPU, rather than two, saving production cost
-  * Integrate Deep Learning Models in the Recon Software for future CT systems 
+  * Develop and deploy Deep Learning models for Low-dose CT image denoising 
   * Evaluate Operating Systems for future CT scanners 
   * GPU Evaluation and Image Quality Evaluation for recon software releases
 
-* July - Dec 2016: Internship at **MERL**
+* July - Dec 2016: **MERL** (Intern)
   * Optimized Model Predictive Control solvers (PQP and ADMM) on NVIDIA Jetson TX1 
   * Developed efficient SGEMV kernels that outperform cuBLAS on NVIDIA Jetson TX1
   * Developed mpcCUDA, GPU-accelerated Model Predictive Control solvers in Matlab 
 
-* Summer 2012: Internship at **Mathworks** 
+* Summer 2012: **Mathworks** (Intern) 
   * Accelerated PSK Demodulator/Modulator on GPU 
   * Accelerated LDPC Decoder for Large Parity Check Matrix on GPU 
   * Improved the parfor section in commViterbiSystemGPU demo
