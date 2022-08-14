@@ -12,5 +12,5 @@ Reading Notes
 
 1. [The First 90 Days ](https://leimingyu.github.io/files/readings/2022/the-first-90-days.pdf)
 
-2. [Computer Graphics from Scratch] (https://leimingyu.github.io/files/readings/2022/ReadingNote-ComputerGraphicsFromScratch-v1.pdf)
+2. [Computer Graphics from Scratch](https://leimingyu.github.io/files/readings/2022/ReadingNote-ComputerGraphicsFromScratch-v1.pdf)
 
