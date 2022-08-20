@@ -1,6 +1,6 @@
 ---
 title: 'Books Read in 2022'
-date: 2022-08-16
+date: 2022-08-20
 permalink: /posts/2022/8/blog-post-7/
 tags:
   - reading 
@@ -16,7 +16,7 @@ Reading Notes
 
 3. [Master the Art of Self Discipline](https://leimingyu.github.io/files/readings/2022/MasterTheArtofSelfDiscipline-BrianTracy.pdf)
 
-4. Raytracing in one weekend
-([github](https://github.com/leimingyu/rayTracyingInWeekend))
+4. Raytracing in one weekend([github](https://github.com/leimingyu/rayTracyingInWeekend))
 
+5. [The Richest Man in Babylon](https://leimingyu.github.io/files/readings/2022/audiobooks-TheRichestManInBabylon.pdf)
 
