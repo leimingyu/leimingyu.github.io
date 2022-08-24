@@ -8,10 +8,10 @@ redirect_from:
   - /about.html
 ---
 
-I’m passionate about parallel computing.
-I am an expert in accelerating complex algorithms on Graphics Processing Units (GPUs).
-I have knowledge in computer architecture, machine learning, deep learning and medical imaging.
-I am interested in growing my knowledge in software and hardware stacks on GPU design and development.
+I am an expert in General Purpose Computing on Graphics Processing Units (GPUs).
+I enjoyed accelerating complex algorithms on modern accelerators.
+I have a background in computer architecture, machine learning, deep learning, and medical imaging.
+I am enthusiastic about the software and hardware stacks of GPU design and its feature development.
 
 I received my Ph.D from Northeastern University.
 I performed doctoral research in the Northeastern University Computer Architecture Research Lab ([NUCAR](https://ece.northeastern.edu/groups/nucar/research.html)),
