@@ -1,7 +1,7 @@
 ---
 title: 'Books Read in 2022'
-date: 2022-08-20
-permalink: /posts/2022/8/blog-post-99999/
+date: 2022-08-23
+permalink: /posts/2022/8/blog-post-99/
 tags:
   - reading 
   - notes 
