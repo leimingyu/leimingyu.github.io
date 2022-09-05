@@ -1,7 +1,7 @@
 ---
 title: 'Books Read in 2022'
-date: 2022-08-23
-permalink: /posts/2022/8/blog-post-99/
+date: 2022-09-5
+permalink: /posts/2022/9/blog-post-99/
 tags:
   - reading 
   - notes 
@@ -20,4 +20,5 @@ Personal Growth
 1. [The First 90 Days ](https://leimingyu.github.io/files/readings/2022/the-first-90-days.pdf)
 2. [Master the Art of Self Discipline](https://leimingyu.github.io/files/readings/2022/MasterTheArtofSelfDiscipline-BrianTracy.pdf)
 3. [The Richest Man in Babylon](https://leimingyu.github.io/files/readings/2022/audiobooks-TheRichestManInBabylon.pdf)
+4. [Poor Charlie's Almanack](https://leimingyu.github.io/files/readings/2022/audiobooks-PoorCharlieAlmanack.pdf)
 
