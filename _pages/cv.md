@@ -13,11 +13,13 @@ redirect_from:
 
 Work experience
 ======
-* July 2019 - Present: **Analogic** 
+* Sep 2022 - Present: **Qualcomm** 
+
+* July 2019 - Sep 2022: **Analogic** 
   * Optimize Computed Tomography related algorithms on GPUs 
 	* Improve Metal Artifact Reduction by 12x
 	* Improve Extended Field of View by 70x
-  * Optimize CT algorithms to run a single GPU, rather than two, saving production cost
+  * Optimize CT algorithms to run on a single GPU, rather than two
   * Develop and deploy Deep Learning models for Low-dose CT image denoising 
   * Evaluate Operating Systems for future CT scanners 
   * GPU Evaluation and Image Quality Evaluation for recon software releases
