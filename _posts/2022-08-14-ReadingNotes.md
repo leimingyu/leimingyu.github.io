@@ -21,5 +21,5 @@ Personal Growth
 2. [Master the Art of Self Discipline](https://leimingyu.github.io/files/readings/2022/MasterTheArtofSelfDiscipline-BrianTracy.pdf)
 3. [The Richest Man in Babylon](https://leimingyu.github.io/files/readings/2022/audiobooks-TheRichestManInBabylon.pdf)
 4. [Poor Charlie's Almanack](https://leimingyu.github.io/files/readings/2022/audiobooks-PoorCharlieAlmanack.pdf)
-4. [Mini Habits](https://leimingyu.github.io/files/readings/2022/audiobooks-MiniHabits.pdf)
+5. [Mini Habits](https://leimingyu.github.io/files/readings/2022/audiobooks-MiniHabits.pdf)
 
