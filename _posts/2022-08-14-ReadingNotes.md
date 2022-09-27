@@ -22,4 +22,5 @@ Personal Growth
 3. [The Richest Man in Babylon](https://leimingyu.github.io/files/readings/2022/audiobooks-TheRichestManInBabylon.pdf)
 4. [Poor Charlie's Almanack](https://leimingyu.github.io/files/readings/2022/audiobooks-PoorCharlieAlmanack.pdf)
 5. [Mini Habits](https://leimingyu.github.io/files/readings/2022/audiobooks-MiniHabits.pdf)
+6. [Who Moved My Cheese, Out of Maze](https://leimingyu.github.io/files/readings/2022/audiobooks-whoMovedMyCheese.pdf)
 
