@@ -1,7 +1,7 @@
 ---
 title: 'Books Read in 2022'
-date: 2022-09-24
-permalink: /posts/2022/9/blog-post-99/
+date: 2022-10-11
+permalink: /posts/2022/10/blog-post-99/
 tags:
   - reading 
   - notes 
@@ -23,4 +23,5 @@ Personal Growth
 4. [Poor Charlie's Almanack](https://leimingyu.github.io/files/readings/2022/audiobooks-PoorCharlieAlmanack.pdf)
 5. [Mini Habits](https://leimingyu.github.io/files/readings/2022/audiobooks-MiniHabits.pdf)
 6. [Who Moved My Cheese, Out of Maze](https://leimingyu.github.io/files/readings/2022/audiobooks-whoMovedMyCheese.pdf)
+6. [OKR](https://leimingyu.github.io/files/readings/2022/audiobooks-OKR.pdf)
 
