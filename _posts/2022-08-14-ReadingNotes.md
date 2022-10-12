@@ -23,5 +23,6 @@ Personal Growth
 4. [Poor Charlie's Almanack](https://leimingyu.github.io/files/readings/2022/audiobooks-PoorCharlieAlmanack.pdf)
 5. [Mini Habits](https://leimingyu.github.io/files/readings/2022/audiobooks-MiniHabits.pdf)
 6. [Who Moved My Cheese, Out of Maze](https://leimingyu.github.io/files/readings/2022/audiobooks-whoMovedMyCheese.pdf)
-6. [OKR](https://leimingyu.github.io/files/readings/2022/audiobooks-OKR.pdf)
+7. [OKR](https://leimingyu.github.io/files/readings/2022/audiobooks-OKR.pdf)
+8. [Rich Dad Poor Dad](https://leimingyu.github.io/files/readings/2022/audiobooks-richDadpoorDad.pdf)
 
