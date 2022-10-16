@@ -1,7 +1,7 @@
 ---
 title: 'Books Read in 2022'
-date: 2022-10-11
-permalink: /posts/2022/10/blog-post-99/
+date: 2022-10-16
+permalink: /posts/2022/12/blog-post-99/
 tags:
   - reading 
   - notes 
@@ -25,4 +25,5 @@ Personal Growth
 6. [Who Moved My Cheese, Out of Maze](https://leimingyu.github.io/files/readings/2022/audiobooks-whoMovedMyCheese.pdf)
 7. [OKR](https://leimingyu.github.io/files/readings/2022/audiobooks-OKR.pdf)
 8. [Rich Dad Poor Dad](https://leimingyu.github.io/files/readings/2022/audiobooks-richDadpoorDad.pdf)
+9. [BehaviorTraps习惯陷阱](https://leimingyu.github.io/files/readings/2022/audiobooks-BehaviorTraps习惯陷阱.pdf)
 
