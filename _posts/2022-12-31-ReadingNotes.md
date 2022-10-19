@@ -26,4 +26,5 @@ Personal Growth
 7. [OKR](https://leimingyu.github.io/files/readings/2022/audiobooks-OKR.pdf)
 8. [Rich Dad Poor Dad](https://leimingyu.github.io/files/readings/2022/audiobooks-richDadpoorDad.pdf)
 9. [BehaviorTraps习惯陷阱](https://leimingyu.github.io/files/readings/2022/audiobooks-BehaviorTraps习惯陷阱.pdf)
+10. [SpeedWorkshop零秒工作](https://leimingyu.github.io/files/readings/2022/audiobooks-SpeedWorkshop_Yuji_Akaba.pdf)
 
