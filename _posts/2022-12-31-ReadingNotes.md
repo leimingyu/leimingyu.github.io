@@ -1,6 +1,6 @@
 ---
 title: 'Books Read in 2022'
-date: 2022-10-16
+date: 2022-10-23
 permalink: /posts/2022/12/blog-post-99/
 tags:
   - reading 
@@ -27,4 +27,5 @@ Personal Growth
 8. [Rich Dad Poor Dad](https://leimingyu.github.io/files/readings/2022/audiobooks-richDadpoorDad.pdf)
 9. [BehaviorTraps习惯陷阱](https://leimingyu.github.io/files/readings/2022/audiobooks-BehaviorTraps习惯陷阱.pdf)
 10. [SpeedWorkshop零秒工作](https://leimingyu.github.io/files/readings/2022/audiobooks-SpeedWorkshop_Yuji_Akaba.pdf)
+11. [McKinseyNegotiation麦肯锡高效沟通课_掌握高难度谈判的13种技巧](https://leimingyu.github.io/files/readings/2022/audiobooks-McKinsey麦肯锡高效沟通课_掌握高难度谈判的13种技巧.pdf)
 
