@@ -1,6 +1,6 @@
 ---
 title: 'Books Read in 2022'
-date: 2022-10-23
+date: 2022-11-4
 permalink: /posts/2022/12/blog-post-99/
 tags:
   - reading 
@@ -28,4 +28,5 @@ Personal Growth
 9. [BehaviorTraps习惯陷阱](https://leimingyu.github.io/files/readings/2022/audiobooks-BehaviorTraps习惯陷阱.pdf)
 10. [SpeedWorkshop零秒工作](https://leimingyu.github.io/files/readings/2022/audiobooks-SpeedWorkshop_Yuji_Akaba.pdf)
 11. [McKinseyNegotiation麦肯锡高效沟通课_掌握高难度谈判的13种技巧](https://leimingyu.github.io/files/readings/2022/audiobooks-McKinsey麦肯锡高效沟通课_掌握高难度谈判的13种技巧.pdf)
+12. [TheRoadLessTraveled少有人走的路.pdf](https://leimingyu.github.io/files/readings/2022/audiobooks-TheRoadLessTraveled少有人走的路.pdf)
 
