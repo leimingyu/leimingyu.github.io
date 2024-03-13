@@ -29,3 +29,25 @@ Edit _sass/_syntax.scss, in the .highlight {} section, change the font-size
 I use type-size-5 for better visualization. 
 The type-size-7 is the smallest supported font size. You can decrease the number
 to increase the font size.
+
+
+//---------------//
+// Updates (3/13/2024) 
+//---------------//
+[1] about me:  check  ./_pages/about.md
+[2] add a new tab (i.e., research) 
+edit _config.yml, 
+go to ./_data, add navigation.yml to add "research" section
+go to ./_pages, copy non-menu-page.md to research.md, modify it
+
+I am adding research as single layout, no archive. Hence, no neede to have 
+./_research folder for different posts.
+
+In this way, I can directly edit _pages/research.md.
+
+for editing the contents, please refer to _pages/archive-layout-with-content.md. 
+
+
+
+
+
