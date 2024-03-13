@@ -8,11 +8,10 @@ redirect_from:
   - /about.html
 ---
 
-I am an expert in General Purpose Computing on Graphics Processing Units (GPUs).
-I enjoyed accelerating complex algorithms on modern accelerators.
-I have a background in computer architecture, machine learning, deep learning, and medical imaging.
-I am enthusiastic about the software and hardware stacks of GPU design and its feature development.
-Currently, I am doing GPU-related research in the Graphics Research Team at Qualcomm.
+With more than a decade of expertise in General Purpose Computing on Graphics Processing Units (GPGPUs), I have cultivated a passion for enhancing the performance of complex algorithms across a diverse range of platforms, from embedded systems to workstations and high-performance computing clusters. My academic and professional journey has endowed me with a profound understanding of computer architecture, alongside a robust foundation in machine learning, deep learning, and medical imaging.
+
+I am particularly enthusiastic about exploring the intricacies of GPU design, including both the software and hardware aspects, as well as driving forward the development of new features. Presently, I am engaged in pioneering GPU-related research within the esteemed Graphics Research Team at Qualcomm, where I continue to contribute to the cutting edge of technology innovation.
+
 
 I received my Ph.D from Northeastern University.
 I performed doctoral research in the Northeastern University Computer Architecture Research Lab ([NUCAR](https://ece.northeastern.edu/groups/nucar/research.html)),
