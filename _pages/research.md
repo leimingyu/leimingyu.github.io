@@ -27,7 +27,13 @@ Expand knowledage in the following fields.
 	* GEMM
 * Convolution 
 
-## Tools 
+## GPU Vendors 
+* Nvidia
+	* [tensor core](https://docs.google.com/document/d/1v0jK07bcJJN19P62Qu_EkGXpaxANe2cl0QFNoPYf_U8/edit?usp=sharing)
+* AMD 
+* Intel
+* Apple
+
 
 ## Notes 
 * [PythonTricks](https://github.com/leimingyu/leimingyu.github.io/blob/master/files/python/PythonTricksTheBook.pdf)
