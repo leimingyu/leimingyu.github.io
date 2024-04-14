@@ -28,3 +28,6 @@ Expand knowledage in the following fields.
 * Convolution 
 
 ## Tools 
+
+## Notes 
+* [PythonTricks](https://github.com/leimingyu/leimingyu.github.io/blob/master/files/python/PythonTricksTheBook.pdf)
