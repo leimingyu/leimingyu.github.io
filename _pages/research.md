@@ -35,5 +35,8 @@ Expand knowledage in the following fields.
 * Apple
 
 
-## Notes 
+---
+### Coding
 * [PythonTricks](https://github.com/leimingyu/leimingyu.github.io/blob/master/files/python/PythonTricksTheBook.pdf)
+* [Programming in C](https://docs.google.com/document/d/e/2PACX-1vSjO0LIk3LWkkdrltbMRiDGEoDylMQdGq9pyFXZvC43b_PJcR8rLJoHzXAORZljcnI2qdXFoceqhBNO/pub)
+
