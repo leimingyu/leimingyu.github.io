@@ -45,6 +45,7 @@ Awards
 
 Peer Review
 ======
+* AI, Journal of Imaging, MDPI, 2024 
 * Journal of Parallel and Distributed Computing (JPDC), 2019 
 * IEEE Transactions on Computers(TCSI), 2019
 * Simulation Modelling Practice and Theory (Elsevier Journal), 2018
