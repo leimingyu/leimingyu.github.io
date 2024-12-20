@@ -34,6 +34,9 @@ Expand knowledage in the following fields.
 * Intel
 * Apple
 
+---
+### Tools 
+* [onnx](https://docs.google.com/document/d/e/2PACX-1vSvHYWmBn5k-fp5DLdtg4MHqPkEwtSv66uFXuqFpiwlWIeZZwdS7xzupJe6pwPfScopwjTpnH-x9zJc/pub) : optimize/fuse/quantization
 
 ---
 ### Coding
