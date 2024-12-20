@@ -47,6 +47,8 @@ In this way, I can directly edit _pages/research.md.
 
 for editing the contents, please refer to _pages/archive-layout-with-content.md. 
 
+[3] edit content of a tab
+go to _pages/<tab-topic>.md, modify script
 
 
 
