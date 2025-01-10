@@ -43,3 +43,6 @@ Expand knowledage in the following fields.
 * [PythonTricks](https://github.com/leimingyu/leimingyu.github.io/blob/master/files/python/PythonTricksTheBook.pdf)
 * [Programming in C](https://docs.google.com/document/d/e/2PACX-1vSjO0LIk3LWkkdrltbMRiDGEoDylMQdGq9pyFXZvC43b_PJcR8rLJoHzXAORZljcnI2qdXFoceqhBNO/pub)
 
+---
+### Windows 
+* [PowerShell Tips](https://docs.google.com/document/d/e/2PACX-1vSntNQL-pGsWkQW4amaYVbgITSft6x75KtJ6xHPCy6QYuHkbkSCUGq_R0IDlvvcfTCVYJG6o8mnPYLS/pub)
