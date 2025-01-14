@@ -19,7 +19,7 @@ Work experience
   * Optimize Computed Tomography related algorithms on GPUs 
 	* Improve Metal Artifact Reduction by 12x
 	* Improve Extended Field of View by 70x
-  * Optimize CT algorithms to run on a single GPU, rather than two
+  * Optimize CT algorithms to run on a single GPU
   * Develop and deploy Deep Learning models for Low-dose CT image denoising 
   * Evaluate Operating Systems for future CT scanners 
   * GPU Evaluation and Image Quality Evaluation for recon software releases
