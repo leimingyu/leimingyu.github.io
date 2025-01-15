@@ -37,6 +37,7 @@ Expand knowledage in the following fields.
 ---
 ### Tools 
 * [onnx](https://docs.google.com/document/d/e/2PACX-1vSvHYWmBn5k-fp5DLdtg4MHqPkEwtSv66uFXuqFpiwlWIeZZwdS7xzupJe6pwPfScopwjTpnH-x9zJc/pub) : optimize/fuse/quantization
+* [vim tricks](https://docs.google.com/document/d/e/2PACX-1vTPLEGk22WAhSkOXFjN-76HScnFYRapfJ_IuYO6g5tcTKPR-LdHe4WVnCRysQFxB3DxnxolBjrPllX7/pub)
 
 ---
 ### Coding
