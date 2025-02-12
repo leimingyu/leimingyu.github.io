@@ -14,6 +14,10 @@ redirect_from:
 Work experience
 ======
 * Sep 2022 - Present: **Qualcomm** 
+  * Optimized AI inference performance on Adreno GPUs
+  * Conducted architectural analysis of advanced AI accelerators
+  * Developed benchmarking tools to evaluate GPU performance and efficiency
+  * Contributed to the design and performance optimization of future Adreno GPUs
 
 * July 2019 - Sep 2022: **Analogic** 
   * Optimize Computed Tomography related algorithms on GPUs 
