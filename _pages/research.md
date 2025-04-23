@@ -9,30 +9,22 @@ redirect_from:
 
 Expand knowledage in the following fields.
 
-## AI Acceleration on GPUs 
-* llm 
-* lvm 
-
-
+## AI Workloads 
+* [LLM](https://docs.google.com/document/d/e/2PACX-1vTqXzWwf4ukJYB0Cfv5FG4nAdBaaZb9WoT5i48iuf3gAzhdqur0CkMpL_L7pOl5oODg8q4-ROfn81Ck/pub)
 
 ## Ray Tracing on GPUs
 * gaussian splatting 
 * nerf
 
-
-## General Purpose Computing
-* Sparse Appliations
-	* sparse workloads on GPU 
-* Dense Applications 
-	* GEMM
-* Convolution 
-
 ## GPU Vendors 
 * Nvidia
-	* [tensor core](https://docs.google.com/document/d/1v0jK07bcJJN19P62Qu_EkGXpaxANe2cl0QFNoPYf_U8/edit?usp=sharing)
+	* [tensor core](https://docs.google.com/document/d/e/2PACX-1vQMlMlz6IxkDNGJkDQAVX8VIy17tMuYbX40bVcSUAhNKR3FikNX01DAa2KGxCn0go-GZYxEIGyw3kS5/pub)
 * AMD 
+	* [RNDA4](https://docs.google.com/document/d/e/2PACX-1vRaOZ7cOk6Sqnwl_yOpQ1aYRNZovJpK4clHFwwij_WXqL4HV6jFbCwiZG1ntwm38GE9Mw6OE-N0MBgY/pub)
 * Intel
 * Apple
+* Google
+	* [TPU v7, Ironwood](https://docs.google.com/document/d/e/2PACX-1vTjm2OivecsT5nzPUo3cOouH4Q6yW4sqpDUudO_8kHG1UH_6oiwRB5Ye5VmRRVMiHegmHDRfQc7MD8T/pub)
 
 ---
 ### Tools 
