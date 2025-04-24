@@ -20,7 +20,7 @@ Expand knowledage in the following fields.
 * Nvidia
 	* [tensor core](https://docs.google.com/document/d/e/2PACX-1vQMlMlz6IxkDNGJkDQAVX8VIy17tMuYbX40bVcSUAhNKR3FikNX01DAa2KGxCn0go-GZYxEIGyw3kS5/pub)
 * AMD 
-	* [RNDA4](https://docs.google.com/document/d/e/2PACX-1vRaOZ7cOk6Sqnwl_yOpQ1aYRNZovJpK4clHFwwij_WXqL4HV6jFbCwiZG1ntwm38GE9Mw6OE-N0MBgY/pub)
+	* [RDNA 4](https://docs.google.com/document/d/e/2PACX-1vRaOZ7cOk6Sqnwl_yOpQ1aYRNZovJpK4clHFwwij_WXqL4HV6jFbCwiZG1ntwm38GE9Mw6OE-N0MBgY/pub)
 * Intel
 * Apple
 * Google
