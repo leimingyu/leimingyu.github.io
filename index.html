@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en"><!-- updated by JS based on user preference -->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Leiming Yu — GPU Researcher</title>
+<meta name="description" content="Leiming Yu, Ph.D. — GPU researcher at Qualcomm. Work on GPU computing, AI inference, computer architecture, and medical imaging." />
+<meta name="author" content="Leiming Yu" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-grid">
+    <div class="photo">
+      <img src="profile.png"
+           onerror="this.onerror=null;this.src='https://www.gravatar.com/avatar/?d=mp&s=240';"
+           alt="Portrait of Leiming Yu" />
+    </div>
+    <div class="intro">
+      <h1>Leiming Yu, Ph.D.</h1>
+      <p class="title">
+        <span class="i18n-en">GPU Researcher · Qualcomm Graphics Research</span>
+        <span class="i18n-zh">GPU 研究员 · 高通图形研究</span>
+      </p>
+      <p class="tagline">在更高的地方遇见自己 — Meet yourself at a higher place.</p>
+      <ul class="links" aria-label="Links">
+        <li><a href="#contact" data-email-user="leimingyu830" data-email-domain="gmail.com" class="email-link">Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=d1IEkD8AAAAJ" rel="me noopener">Scholar</a></li>
+        <li><a href="https://github.com/leimingyu" rel="me noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/leimingyu" rel="me noopener">LinkedIn</a></li>
+        <li><a href="https://twitter.com/yu_leiming" rel="me noopener">Twitter</a></li>
+        <li><a href="https://leimingyu.github.io/files/LeimingYu_resume.pdf" target="_blank" rel="noopener">CV</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="zh">中</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container">
+      <a href="#bio"><span class="i18n-en">Bio</span><span class="i18n-zh">简介</span></a>
+      <a href="#cv"><span class="i18n-en">CV</span><span class="i18n-zh">履历</span></a>
+      <a href="#news"><span class="i18n-en">News</span><span class="i18n-zh">动态</span></a>
+      <a href="#awards"><span class="i18n-en">Awards</span><span class="i18n-zh">荣誉</span></a>
+      <a href="#publications"><span class="i18n-en">Publications</span><span class="i18n-zh">论文</span></a>
+      <a href="#projects"><span class="i18n-en">Projects</span><span class="i18n-zh">项目</span></a>
+      <a href="#talks"><span class="i18n-en">Talks</span><span class="i18n-zh">报告</span></a>
+      <a href="#teaching"><span class="i18n-en">Teaching</span><span class="i18n-zh">教学</span></a>
+      <a href="#contact"><span class="i18n-en">Contact</span><span class="i18n-zh">联系</span></a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="container">
+
+  <section id="bio" aria-labelledby="bio-h">
+    <h2 id="bio-h"><span class="i18n-en">Bio</span><span class="i18n-zh">简介</span></h2>
+
+    <p class="i18n-en">
+      I'm a GPU researcher on Qualcomm's Graphics Research team, where I focus on
+      AI inference and architectural analysis for Adreno GPUs. Over the past decade
+      I've worked on making GPUs faster and more useful — from embedded SoCs to HPC
+      clusters, across speech recognition, X-ray diffraction, photon transport, and
+      CT imaging.
+    </p>
+    <p class="i18n-zh">
+      我是高通公司图形研究团队（Qualcomm Graphics Research）的 GPU 研究员，专注于
+      Adreno GPU 的 AI 推理与架构分析。过去十余年里，我致力于让 GPU 更快、更实用——
+      从嵌入式 SoC 到 HPC 集群，涉及语音识别、X 射线衍射、光子传输与 CT 成像等多个领域。
+    </p>
+
+    <p class="i18n-en">
+      Before Qualcomm, I worked on GPU optimization for CT imaging at Analogic,
+      including a 12× speed-up on Metal Artifact Reduction and deep-learning models
+      for low-dose CT denoising. I earned my Ph.D. in Computer Engineering at
+      Northeastern University with
+      <a href="http://www.ece.neu.edu/groups/nucar/" rel="noopener">NUCAR</a>
+      (advisor: <a href="https://coe.northeastern.edu/people/kaeli-david/" rel="noopener">Dr. David Kaeli</a>)
+      and the <a href="https://fanglab.org" rel="noopener">COTI Lab</a>
+      (Dr. Qianqian Fang), where I extended <em>Monte Carlo eXtreme</em> (MCX) to
+      heterogeneous CPU/GPU platforms and developed <em>Moka</em>, a model-based
+      analysis of concurrent kernel execution.
+    </p>
+    <p class="i18n-zh">
+      加入高通之前，我在 Analogic 公司负责 CT 成像的 GPU 优化工作，包括将金属伪影校正
+      （Metal Artifact Reduction）算法加速 12 倍，以及低剂量 CT 去噪的深度学习模型。
+      我在美国东北大学（Northeastern University）获得计算机工程博士学位，导师为
+      <a href="https://coe.northeastern.edu/people/kaeli-david/" rel="noopener">David Kaeli 教授</a>
+      （<a href="http://www.ece.neu.edu/groups/nucar/" rel="noopener">NUCAR 实验室</a>），
+      副导师为房骞骞教授（<a href="https://fanglab.org" rel="noopener">COTI 实验室</a>）。
+      博士期间，我将 <em>Monte Carlo eXtreme</em>（MCX）扩展到异构 CPU/GPU 平台，
+      并开发了基于模型的并发核函数执行分析框架 <em>Moka</em>。
+    </p>
+
+    <p class="i18n-en">
+      My current interests sit at the intersection of modern GPU architecture and
+      AI workloads — LLM inference, kernel fusion and quantization, tensor-core
+      utilization, and neural rendering (Gaussian splatting, NeRF). I'm drawn to
+      work that's both rigorous and useful: understanding why a system behaves the
+      way it does, then making it tangibly better.
+    </p>
+    <p class="i18n-zh">
+      我目前的研究兴趣聚焦于现代 GPU 架构与 AI 工作负载的交叉领域——大语言模型推理、
+      内核融合与量化、张量核（tensor core）利用率，以及神经渲染（高斯泼溅、NeRF）。
+      我所追求的是既严谨又实用的工作：先理解一个系统为何如此运行，然后让它真正变得更好。
+    </p>
+  </section>
+
+  <section id="cv" aria-labelledby="cv-h">
+    <h2 id="cv-h"><span class="i18n-en">CV</span><span class="i18n-zh">履历</span></h2>
+
+    <h3 class="cv-subhead">
+      <span class="i18n-en">Experience</span><span class="i18n-zh">工作经历</span>
+    </h3>
+    <div class="cv-entry">
+      <span class="when"><span class="i18n-en">2022 – Present</span><span class="i18n-zh">2022 — 至今</span></span>
+      <div>
+        <h3>GPU Researcher · Qualcomm</h3>
+        <p class="where">
+          <span class="i18n-en">Graphics Research Team — AI inference on Adreno GPUs, accelerator architectural analysis, GPU benchmarking.</span>
+          <span class="i18n-zh">图形研究团队 —— Adreno GPU 上的 AI 推理、加速器架构分析、GPU 性能评测。</span>
+        </p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <span class="when">2019 – 2022</span>
+      <div>
+        <h3>R&amp;D Engineer · Analogic</h3>
+        <p class="where">
+          <span class="i18n-en">CT reconstruction on GPUs (12× MAR speed-up); deep-learning models for low-dose CT denoising.</span>
+          <span class="i18n-zh">GPU 上的 CT 重建（金属伪影校正加速 12 倍）；用于低剂量 CT 去噪的深度学习模型。</span>
+        </p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <span class="when"><span class="i18n-en">Jul – Dec 2016</span><span class="i18n-zh">2016 年 7–12 月</span></span>
+      <div>
+        <h3>Research Intern · MERL</h3>
+        <p class="where">
+          <span class="i18n-en">GPU-accelerated Model Predictive Control on NVIDIA Jetson TX1; mpcCUDA solvers.</span>
+          <span class="i18n-zh">在 NVIDIA Jetson TX1 上实现 GPU 加速的模型预测控制（MPC）；开发 mpcCUDA 求解器。</span>
+        </p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <span class="when"><span class="i18n-en">Summer 2012</span><span class="i18n-zh">2012 年夏</span></span>
+      <div>
+        <h3>Engineering Intern · MathWorks</h3>
+        <p class="where">
+          <span class="i18n-en">GPU-accelerated PSK modulation, LDPC decoding, and Turbo decoder on MATLAB Distributed Computing Server.</span>
+          <span class="i18n-zh">在 MATLAB 分布式计算服务器上实现 GPU 加速的 PSK 调制、LDPC 解码与 Turbo 解码器。</span>
+        </p>
+      </div>
+    </div>
+
+    <h3 class="cv-subhead">
+      <span class="i18n-en">Education</span><span class="i18n-zh">教育背景</span>
+    </h3>
+    <div class="cv-entry">
+      <span class="when">2019</span>
+      <div>
+        <h3>
+          <span class="i18n-en">Ph.D., Computer Engineering</span>
+          <span class="i18n-zh">博士，计算机工程</span>
+        </h3>
+        <p class="where">
+          <span class="i18n-en">Northeastern University · Advisor: Dr. David Kaeli (NUCAR) · Co-advisor: Dr. Qianqian Fang (COTI)</span>
+          <span class="i18n-zh">东北大学（Northeastern University） · 导师：David Kaeli 教授（NUCAR） · 副导师：房骞骞教授（COTI）</span>
+        </p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <span class="when">2010</span>
+      <div>
+        <h3>
+          <span class="i18n-en">M.S., Electrical Engineering</span>
+          <span class="i18n-zh">硕士，电气工程</span>
+        </h3>
+        <p class="where">
+          <span class="i18n-en">University of Bridgeport, CT, USA</span>
+          <span class="i18n-zh">布里奇波特大学，美国康涅狄格州</span>
+        </p>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <span class="when">2006</span>
+      <div>
+        <h3>
+          <span class="i18n-en">B.S., Electrical Engineering</span>
+          <span class="i18n-zh">学士，电气工程</span>
+        </h3>
+        <p class="where">
+          <span class="i18n-en">Shanghai Maritime University, China</span>
+          <span class="i18n-zh">上海海事大学，中国</span>
+        </p>
+      </div>
+    </div>
+
+    <p class="cv-fullcv">
+      <a href="https://leimingyu.github.io/files/LeimingYu_resume.pdf" target="_blank" rel="noopener">
+        <span class="i18n-en">Full CV (PDF) →</span>
+        <span class="i18n-zh">完整简历（PDF）→</span>
+      </a>
+    </p>
+  </section>
+
+  <section id="news" aria-labelledby="news-h">
+    <h2 id="news-h"><span class="i18n-en">News</span><span class="i18n-zh">最新动态</span></h2>
+    <ul class="news-list">
+
+      <li class="news-item">
+        <span class="when"><span class="i18n-en">Aug 2024</span><span class="i18n-zh">2024 年 8 月</span></span>
+        <div class="news-body">
+          <span class="tag tag-service"><span class="i18n-en">Service</span><span class="i18n-zh">服务</span></span>
+          <p>
+            <span class="i18n-en">Serving as reviewer for <em>AI</em> and <em>Journal of Imaging</em> (MDPI).</span>
+            <span class="i18n-zh">担任 <em>AI</em> 与 <em>Journal of Imaging</em>（MDPI）期刊审稿人。</span>
+          </p>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <span class="when"><span class="i18n-en">Sep 2022</span><span class="i18n-zh">2022 年 9 月</span></span>
+        <div class="news-body">
+          <span class="tag tag-position"><span class="i18n-en">Position</span><span class="i18n-zh">职位</span></span>
+          <p>
+            <span class="i18n-en">Joined Qualcomm's Graphics Research Team as a GPU researcher.</span>
+            <span class="i18n-zh">加入高通图形研究团队，担任 GPU 研究员。</span>
+          </p>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <span class="when"><span class="i18n-en">Feb 2022</span><span class="i18n-zh">2022 年 2 月</span></span>
+        <div class="news-body">
+          <span class="tag tag-pub"><span class="i18n-en">Publication</span><span class="i18n-zh">发表</span></span>
+          <p>
+            <span class="i18n-en">Paper on 3D residual CNN for low-dose CT denoising presented at SPIE Medical Imaging.</span>
+            <span class="i18n-zh">关于低剂量 CT 去噪的 3D 残差 CNN 论文在 SPIE Medical Imaging 会议发表。</span>
+          </p>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <span class="when">2022</span>
+        <div class="news-body">
+          <span class="tag tag-pub"><span class="i18n-en">Publication</span><span class="i18n-zh">发表</span></span>
+          <p>
+            <span class="i18n-en">Co-authored work on deep-learning-based denoising for Monte Carlo photon transport published in <em>Journal of Biomedical Optics</em>.</span>
+            <span class="i18n-zh">合著的基于深度学习的蒙特卡洛光子传输去噪研究发表于 <em>Journal of Biomedical Optics</em>。</span>
+          </p>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <span class="when">2019</span>
+        <div class="news-body">
+          <span class="tag tag-milestone"><span class="i18n-en">Milestone</span><span class="i18n-zh">里程碑</span></span>
+          <p>
+            <span class="i18n-en">Defended Ph.D. at Northeastern University. Advisor: Dr. David Kaeli.</span>
+            <span class="i18n-zh">在东北大学完成博士论文答辩，导师为 David Kaeli 教授。</span>
+          </p>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="awards" aria-labelledby="awards-h">
+    <h2 id="awards-h">
+      <span class="i18n-en">Awards &amp; Service</span>
+      <span class="i18n-zh">荣誉与服务</span>
+    </h2>
+    <div class="two-col">
+      <div>
+        <h3><span class="i18n-en">Awards</span><span class="i18n-zh">获奖</span></h3>
+        <ul>
+          <li><span class="i18n-en">Best Poster — HPC Day 2017</span><span class="i18n-zh">最佳海报 —— HPC Day 2017</span></li>
+          <li><span class="i18n-en">Best Poster — HPC Day 2016</span><span class="i18n-zh">最佳海报 —— HPC Day 2016</span></li>
+          <li><span class="i18n-en">"Most Robust" — GE Hackathon Challenge, 2017</span><span class="i18n-zh">"最稳健" 奖 —— GE 黑客马拉松，2017</span></li>
+          <li><span class="i18n-en">Student Travel Grant — IISWC 2017</span><span class="i18n-zh">学生差旅资助 —— IISWC 2017</span></li>
+          <li><span class="i18n-en">Student Travel Grant — PPoPP 2015</span><span class="i18n-zh">学生差旅资助 —— PPoPP 2015</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3><span class="i18n-en">Peer Review</span><span class="i18n-zh">同行评审</span></h3>
+        <ul>
+          <li><em>AI</em>, MDPI (2024)</li>
+          <li><em>Journal of Imaging</em>, MDPI (2024)</li>
+          <li><em>Journal of Parallel and Distributed Computing</em></li>
+          <li><em>IEEE Transactions on Computers</em></li>
+          <li><em>Simulation Modelling Practice and Theory</em></li>
+          <li><span class="i18n-en">PDP Conference (2016)</span><span class="i18n-zh">PDP 会议（2016）</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" aria-labelledby="pubs-h">
+    <h2 id="pubs-h">
+      <span class="i18n-en">Publications</span>
+      <span class="i18n-zh">学术发表</span>
+    </h2>
+    <p class="pubs-meta">
+      <a href="https://scholar.google.com/citations?user=d1IEkD8AAAAJ" rel="noopener">Google Scholar</a>
+      &nbsp;·&nbsp;
+      <button type="button" class="filter-btn active" data-filter="all"><span class="i18n-en">All</span><span class="i18n-zh">全部</span></button>
+      <button type="button" class="filter-btn" data-filter="journal"><span class="i18n-en">Journal</span><span class="i18n-zh">期刊</span></button>
+      <button type="button" class="filter-btn" data-filter="conference"><span class="i18n-en">Conference</span><span class="i18n-zh">会议</span></button>
+      <button type="button" class="filter-btn" data-filter="workshop"><span class="i18n-en">Workshop</span><span class="i18n-zh">研讨会</span></button>
+    </p>
+
+    <ol class="pub-list" reversed>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2022</span>
+        <div>
+          <p class="pub-title">3D residual convolutional neural network for low dose CT denoising</p>
+          <p class="pub-authors">Alexander A. Zamyatin, <strong>Leiming Yu</strong>, David Rozas</p>
+          <p class="pub-venue"><em>SPIE Medical Imaging 2022: Physics of Medical Imaging</em>, vol. 12031, pp. 634–645.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="journal">
+        <span class="year">2022</span>
+        <div>
+          <p class="pub-title">Framework for denoising Monte Carlo photon transport simulations using deep learning</p>
+          <p class="pub-authors">Matin Raayai Ardakani, <strong>Leiming Yu</strong>, David R. Kaeli, Qianqian Fang</p>
+          <p class="pub-venue"><em>Journal of Biomedical Optics</em>, vol. 27, no. 8, p. 083019.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2018</span>
+        <div>
+          <p class="pub-title">An efficient data management framework for the Puerto Rico Testsite for Exploring Contamination Threats (PROTECT)</p>
+          <p class="pub-authors">Shi Dong, Zlatan Feric, <strong>Leiming Yu</strong>, David Kaeli, John Meeker, Ingrid Y. Padilla, Jose Cordero, Carmen Velez Vega, Zaira Rosario, Akram Alshawabkeh</p>
+          <p class="pub-venue"><em>2018 IEEE International Conference on Big Data</em>, pp. 5316–5318.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="journal">
+        <span class="year">2018</span>
+        <div>
+          <p class="pub-title">Scalable and massively parallel Monte Carlo photon transport simulations for heterogeneous computing platforms</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong>, Fanny Nina-Paravecino, David Kaeli, Qianqian Fang</p>
+          <p class="pub-venue"><em>Journal of Biomedical Optics</em>, vol. 23, no. 1, p. 010504.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2018</span>
+        <div>
+          <p class="pub-title">Fast Monte Carlo photon transport simulations for heterogeneous computing systems</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong>, Fanny Nina-Paravecino, David Kaeli, Qianqian Fang</p>
+          <p class="pub-venue"><em>Clinical and Translational Biophotonics</em>, pp. JTh3A-38, OSA.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="journal">
+        <span class="year">2018</span>
+        <div>
+          <p class="pub-title">GPU-accelerated adaptive nonlocal means filter for denoising 3D Monte Carlo photon transport simulations</p>
+          <p class="pub-authors">Yaoshen Yuan, <strong>Leiming Yu</strong>, Zafer Doğan, Qianqian Fang</p>
+          <p class="pub-venue"><em>Journal of Biomedical Optics</em>, vol. 23, no. 12, p. 121618.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2018</span>
+        <div>
+          <p class="pub-title">Denoising in Monte Carlo photon transport simulations using GPU-accelerated adaptive non-local mean filter</p>
+          <p class="pub-authors">Yaoshen Yuan, <strong>Leiming Yu</strong>, Qianqian Fang</p>
+          <p class="pub-venue"><em>Optical Tomography and Spectroscopy</em>, pp. JTh3A-41, OSA.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2017</span>
+        <div>
+          <p class="pub-title">Efficient convex optimization on GPUs for embedded model predictive control</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong>, Abraham Goldsmith, Stefano Di Cairano</p>
+          <p class="pub-venue"><em>Proceedings of the General Purpose GPUs (GPGPU)</em>, pp. 12–21, ACM.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2017</span>
+        <div>
+          <p class="pub-title">Moka: Model-based concurrent kernel analysis</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong>, Xun Gong, Yifan Sun, Qianqian Fang, Norm Rubin, David Kaeli</p>
+          <p class="pub-venue"><em>2017 IEEE International Symposium on Workload Characterization (IISWC)</em>, pp. 197–206.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="workshop">
+        <span class="year">2017</span>
+        <div>
+          <p class="pub-title">Accelerating machine learning algorithms in Python</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong></p>
+          <p class="pub-venue">Boston Area Architecture Workshop.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="journal">
+        <span class="year">2017</span>
+        <div>
+          <p class="pub-title">High-performance Monte Carlo simulations for photon migration and applications in optical brain functional imaging</p>
+          <p class="pub-authors">Fanny Nina-Paravecino, <strong>Leiming Yu</strong>, Qianqian Fang, David Kaeli</p>
+          <p class="pub-venue"><em>Handbook of Large-Scale Distributed Computing in Smart Healthcare</em>, pp. 67–85, Springer.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="journal">
+        <span class="year">2016</span>
+        <div>
+          <p class="pub-title">A framework for big metabolomic data management and analysis</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong></p>
+          <p class="pub-venue"><em>IARIA Journal</em>.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2016</span>
+        <div>
+          <p class="pub-title">Hetero-Mark: A benchmark suite for CPU-GPU collaborative computing</p>
+          <p class="pub-authors">Yifan Sun, Xiang Gong, Amir Kavyan Ziabari, <strong>Leiming Yu</strong>, Xiangyu Li, Saoni Mukherjee, Carter McCardwell, Alejandro Villegas, David Kaeli</p>
+          <p class="pub-venue"><em>2016 IEEE International Symposium on Workload Characterization (IISWC)</em>, pp. 1–10.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="journal">
+        <span class="year">2016</span>
+        <div>
+          <p class="pub-title">Diffraction pattern simulation of cellulose fibrils using distributed and quantized pair distances</p>
+          <p class="pub-authors">Yan Zhang, Hideyo Inouye, Michael Crowley, <strong>Leiming Yu</strong>, David Kaeli, Lee Makowski</p>
+          <p class="pub-venue"><em>Journal of Applied Crystallography</em>, vol. 49, no. 6, pp. 2244–2248.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="workshop">
+        <span class="year">2015</span>
+        <div>
+          <p class="pub-title">Speech recognition on modern graphic processing units</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong></p>
+          <p class="pub-venue">6th Annual Boston Area Architecture Workshop.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2015</span>
+        <div>
+          <p class="pub-title">Big data analysis on Puerto Rico Testsite for Exploring Contamination Threats</p>
+          <p class="pub-authors">Xiangyu Li, <strong>Leiming Yu</strong>, David Kaeli, Yuanyuan Yao, Poguang Wang, Roger Giese, Akram Alshawabkeh</p>
+          <p class="pub-venue">ALLDATA.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="workshop">
+        <span class="year">2015</span>
+        <div>
+          <p class="pub-title">Exploring the features of OpenCL 2.0</p>
+          <p class="pub-authors">Saoni Mukherjee, Xiang Gong, <strong>Leiming Yu</strong>, Carter McCardwell, Yash Ukidave, Tuan Dao, Fanny Nina Paravecino, David Kaeli</p>
+          <p class="pub-venue">3rd International Workshop on OpenCL, p. 5, ACM.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2015</span>
+        <div>
+          <p class="pub-title">NuPar: A benchmark suite for modern GPU architectures</p>
+          <p class="pub-authors">Yash Ukidave, Fanny Nina Paravecino, <strong>Leiming Yu</strong>, Charu Kalra, Amir Momeni, Zhongliang Chen, Nick Materise, Brett Daley, Perhaad Mistry, David Kaeli</p>
+          <p class="pub-venue">6th ACM/SPEC International Conference on Performance Engineering, pp. 253–264.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="workshop">
+        <span class="year">2015</span>
+        <div>
+          <p class="pub-title">High performance computing of fiber scattering simulation</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong>, Yan Zhang, Xiang Gong, Nilay Roy, Lee Makowski, David Kaeli</p>
+          <p class="pub-venue">8th Workshop on General Purpose Processing using GPUs (GPGPU), pp. 90–98, ACM.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2014</span>
+        <div>
+          <p class="pub-title">GPU-accelerated HMM for speech recognition</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong>, Yash Ukidave, David Kaeli</p>
+          <p class="pub-venue">43rd International Conference on Parallel Processing Workshops, pp. 395–402, IEEE.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2014</span>
+        <div>
+          <p class="pub-title">Fast simulation of X-ray diffraction patterns from cellulose fibrils using GPUs</p>
+          <p class="pub-authors">Yan Zhang, <strong>Leiming Yu</strong>, David Kaeli, Lee Makowski</p>
+          <p class="pub-venue">40th Annual Northeast Bioengineering Conference (NEBEC), pp. 1–2, IEEE.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2009</span>
+        <div>
+          <p class="pub-title">Speech disorders: An analysis of hypernasal speech using signal processing techniques</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong></p>
+          <p class="pub-venue">2009 ASEE NE American Society for Engineering Education Conference.</p>
+        </div>
+      </li>
+
+      <li class="pub" data-type="conference">
+        <span class="year">2009</span>
+        <div>
+          <p class="pub-title">Classifying hypernasality using the pitch and formants</p>
+          <p class="pub-authors"><strong>Leiming Yu</strong></p>
+          <p class="pub-venue">6th International Conference on Information Technology — New Generations (ITNG 2009).</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <h2 id="projects-h"><span class="i18n-en">Projects</span><span class="i18n-zh">项目</span></h2>
+    <ul class="project-list">
+      <li>
+        <h3>Monte Carlo eXtreme (MCX)</h3>
+        <p class="meta">
+          <span class="i18n-en">2016 · Northeastern University · GPU-accelerated photon transport</span>
+          <span class="i18n-zh">2016 · 东北大学 · GPU 加速的光子传输</span>
+        </p>
+        <p>
+          <span class="i18n-en">GPU-accelerated Monte Carlo simulation of photon migration in 3D turbid media. Scaled across heterogeneous CPU/GPU platforms for biomedical optics.</span>
+          <span class="i18n-zh">在三维混浊介质中实现 GPU 加速的蒙特卡洛光子迁移仿真，并在异构 CPU/GPU 平台上扩展以服务于生物医学光学应用。</span>
+        </p>
+      </li>
+      <li>
+        <h3>Fiber Scattering Simulation on GPUs</h3>
+        <p class="meta">
+          <span class="i18n-en">2015 · Northeastern University · X-ray diffraction modeling</span>
+          <span class="i18n-zh">2015 · 东北大学 · X 射线衍射建模</span>
+        </p>
+        <p>
+          <span class="i18n-en">High-performance GPU implementation of fiber scattering / X-ray diffraction pattern simulation for cellulose fibrils.</span>
+          <span class="i18n-zh">面向纤维素纤维的纤维散射 / X 射线衍射图样仿真的高性能 GPU 实现。</span>
+        </p>
+      </li>
+      <li>
+        <h3>PROTECT — Data Management &amp; Modeling</h3>
+        <p class="meta">
+          <span class="i18n-en">2014 · Northeastern University · Big-data infrastructure</span>
+          <span class="i18n-zh">2014 · 东北大学 · 大数据基础设施</span>
+        </p>
+        <p>
+          <span class="i18n-en">Scalable data management framework for the Puerto Rico Testsite for Exploring Contamination Threats (PROTECT).</span>
+          <span class="i18n-zh">为 PROTECT（波多黎各污染威胁研究试验区）构建的可扩展数据管理框架。</span>
+        </p>
+      </li>
+      <li>
+        <h3>GPU-accelerated HMM</h3>
+        <p class="meta">
+          <span class="i18n-en">2014 · Northeastern University · Speech recognition</span>
+          <span class="i18n-zh">2014 · 东北大学 · 语音识别</span>
+        </p>
+        <p>
+          <span class="i18n-en">GPU-optimized Hidden Markov Model implementation accelerating speech-recognition workloads.</span>
+          <span class="i18n-zh">面向语音识别工作负载的 GPU 优化隐马尔可夫模型（HMM）实现。</span>
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="talks" aria-labelledby="talks-h">
+    <h2 id="talks-h">
+      <span class="i18n-en">Talks &amp; Posters</span>
+      <span class="i18n-zh">报告与海报</span>
+    </h2>
+
+    <p class="talks-meta">
+      <button type="button" class="talk-filter active" data-filter="all"><span class="i18n-en">All</span><span class="i18n-zh">全部</span></button>
+      <button type="button" class="talk-filter" data-filter="talk"><span class="i18n-en">Talks</span><span class="i18n-zh">报告</span></button>
+      <button type="button" class="talk-filter" data-filter="poster"><span class="i18n-en">Posters</span><span class="i18n-zh">海报</span></button>
+    </p>
+
+    <ul class="talk-list">
+
+      <li class="talk" data-type="poster">
+        <span class="year">2022</span>
+        <div class="talk-body">
+          <div class="talk-head">
+            <h3 class="talk-title">3D residual convolutional neural network for low dose CT denoising</h3>
+            <span class="tag tag-poster"><span class="i18n-en">Poster</span><span class="i18n-zh">海报</span></span>
+          </div>
+          <p class="talk-venue">SPIE Medical Imaging 2022 · San Diego, CA</p>
+          <p class="talk-link"><a href="https://spie.org/medical-imaging/presentation/3D-residual-encoder-decoder-convolutional-neural-network-for-low-dose/12031-165" rel="noopener"><span class="i18n-en">View →</span><span class="i18n-zh">查看 →</span></a></p>
+        </div>
+      </li>
+
+      <li class="talk" data-type="poster">
+        <span class="year">2019</span>
+        <div class="talk-body">
+          <div class="talk-head">
+            <h3 class="talk-title">Neural network denoiser for Monte Carlo photon transport simulations</h3>
+            <span class="tag tag-poster"><span class="i18n-en">Poster</span><span class="i18n-zh">海报</span></span>
+          </div>
+          <p class="talk-venue">SPIE Photonic West 2019 · San Francisco, CA</p>
+          <p class="talk-link"><a href="https://leimingyu.github.io/files/posters/PW19_NN_Denoising.pdf" rel="noopener"><span class="i18n-en">PDF →</span><span class="i18n-zh">PDF →</span></a></p>
+        </div>
+      </li>
+
+      <li class="talk" data-type="poster">
+        <span class="year">2018</span>
+        <div class="talk-body">
+          <div class="talk-head">
+            <h3 class="talk-title">Denoising in Monte Carlo photon transport simulation using neural networks</h3>
+            <span class="tag tag-poster"><span class="i18n-en">Poster</span><span class="i18n-zh">海报</span></span>
+          </div>
+          <p class="talk-venue">HPC Day 2018 · Northeastern University, Boston, MA</p>
+          <p class="talk-link"><a href="https://leimingyu.github.io/files/posters/mcxDenoising_hpcday_2018.pdf" rel="noopener"><span class="i18n-en">PDF →</span><span class="i18n-zh">PDF →</span></a></p>
+        </div>
+      </li>
+
+      <li class="talk" data-type="poster">
+        <span class="year">2018</span>
+        <div class="talk-body">
+          <div class="talk-head">
+            <h3 class="talk-title">Fast MCX for heterogeneous computing systems</h3>
+            <span class="tag tag-poster"><span class="i18n-en">Poster</span><span class="i18n-zh">海报</span></span>
+          </div>
+          <p class="talk-venue">COE Ph.D. Research Expo · Northeastern University</p>
+          <p class="talk-link"><a href="https://leimingyu.github.io/files/posters/phd_expo_18.pdf" rel="noopener"><span class="i18n-en">PDF →</span><span class="i18n-zh">PDF →</span></a></p>
+        </div>
+      </li>
+
+      <li class="talk" data-type="talk">
+        <span class="year">2017</span>
+        <div class="talk-body">
+          <div class="talk-head">
+            <h3 class="talk-title">Monte Carlo eXtreme (MCX) in OpenCL</h3>
+            <span class="tag tag-talk"><span class="i18n-en">Talk</span><span class="i18n-zh">报告</span></span>
+          </div>
+          <p class="talk-venue">MCX Workshop · Boston, MA</p>
+          <p class="talk-link"><a href="https://leimingyu.github.io/files/posters/2_MCX_Workshop_MCX_Training.pdf" rel="noopener"><span class="i18n-en">PDF →</span><span class="i18n-zh">PDF →</span></a></p>
+        </div>
+      </li>
+
+      <li class="talk" data-type="poster">
+        <span class="year">2017</span>
+        <div class="talk-body">
+          <div class="talk-head">
+            <h3 class="talk-title">Model-based concurrent kernel execution on GPU</h3>
+            <span class="tag tag-poster"><span class="i18n-en">Poster</span><span class="i18n-zh">海报</span></span>
+          </div>
+          <p class="talk-venue">HPC Day 2017 · UMass Dartmouth, MA</p>
+          <p class="talk-link"><a href="https://leimingyu.github.io/files/posters/HPCDay2017_CKE_final.pdf" rel="noopener"><span class="i18n-en">PDF →</span><span class="i18n-zh">PDF →</span></a></p>
+        </div>
+      </li>
+
+      <li class="talk" data-type="talk">
+        <span class="year">2016</span>
+        <div class="talk-body">
+          <div class="talk-head">
+            <h3 class="talk-title">Portable performance for Monte Carlo simulation of photon migration in 3D turbid media for single and multiple GPUs</h3>
+            <span class="tag tag-talk"><span class="i18n-en">Talk</span><span class="i18n-zh">报告</span></span>
+          </div>
+          <p class="talk-venue">GTC 2016 · Silicon Valley, CA</p>
+          <p class="talk-link"><a href="http://on-demand.gputechconf.com/gtc/2016/presentation/s6635-paravecino-portable-performance-monte-carlo-simulation-photon-migration-3d-turbid-media-gpus.pdf" rel="noopener"><span class="i18n-en">PDF →</span><span class="i18n-zh">PDF →</span></a></p>
+        </div>
+      </li>
+
+      <li class="talk" data-type="poster">
+        <span class="year">2016</span>
+        <div class="talk-body">
+          <div class="talk-head">
+            <h3 class="talk-title">Monte Carlo simulation of photon migration in 3D turbid media</h3>
+            <span class="tag tag-poster"><span class="i18n-en">Poster</span><span class="i18n-zh">海报</span></span>
+          </div>
+          <p class="talk-venue">HPC Day 2016 · UMass Dartmouth, MA</p>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="teaching" aria-labelledby="teaching-h">
+    <h2 id="teaching-h"><span class="i18n-en">Teaching</span><span class="i18n-zh">教学经历</span></h2>
+    <ul class="teaching-list">
+
+      <li class="teach">
+        <span class="year">2017</span>
+        <div class="teach-body">
+          <div class="teach-head">
+            <h3 class="teach-title">GPU Programming</h3>
+            <span class="tag tag-invited"><span class="i18n-en">Invited Lecturer</span><span class="i18n-zh">受邀讲师</span></span>
+          </div>
+          <p class="teach-where">Philips</p>
+        </div>
+      </li>
+
+      <li class="teach">
+        <span class="year">2015 – 2017</span>
+        <div class="teach-body">
+          <div class="teach-head">
+            <h3 class="teach-title">GPU Class</h3>
+            <span class="tag tag-lecturer"><span class="i18n-en">Lecturer</span><span class="i18n-zh">主讲教师</span></span>
+          </div>
+          <p class="teach-where">Northeastern University</p>
+        </div>
+      </li>
+
+      <li class="teach">
+        <span class="year">2013</span>
+        <div class="teach-body">
+          <div class="teach-head">
+            <h3 class="teach-title">GPU Class</h3>
+            <span class="tag tag-ta"><span class="i18n-en">Teaching Assistant</span><span class="i18n-zh">助教</span></span>
+          </div>
+          <p class="teach-where">Northeastern University</p>
+        </div>
+      </li>
+
+      <li class="teach">
+        <span class="year">2008 – 2010</span>
+        <div class="teach-body">
+          <div class="teach-head">
+            <h3 class="teach-title">Audio Processing Lab &amp; Digital Processing Lab</h3>
+            <span class="tag tag-ta"><span class="i18n-en">Teaching Assistant</span><span class="i18n-zh">助教</span></span>
+          </div>
+          <p class="teach-where">University of Bridgeport</p>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h"><span class="i18n-en">Contact</span><span class="i18n-zh">联系方式</span></h2>
+    <p class="i18n-en">
+      The best way to reach me is by
+      <a href="#" class="email-send"
+         data-email-user="leimingyu830" data-email-domain="gmail.com">email</a>.
+      For longer-form work, see my
+      <a href="https://leimingyu.github.io/files/LeimingYu_resume.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      or the
+      <a href="https://scholar.google.com/citations?user=d1IEkD8AAAAJ" rel="noopener">publication list</a>
+      on Google Scholar.
+    </p>
+    <p class="i18n-zh">
+      最便捷的联系方式是
+      <a href="#" class="email-send"
+         data-email-user="leimingyu830" data-email-domain="gmail.com">邮箱</a>。
+      如需了解更详细的信息，请查看我的
+      <a href="https://leimingyu.github.io/files/LeimingYu_resume.pdf" target="_blank" rel="noopener">简历（PDF）</a>，
+      或访问
+      <a href="https://scholar.google.com/citations?user=d1IEkD8AAAAJ" rel="noopener">Google Scholar 论文列表</a>。
+    </p>
+    <noscript>
+      <p style="color: var(--muted); font-size: 0.9rem;">
+        <span class="i18n-en">Email link requires JavaScript. Without it, please reach me via <a href="https://linkedin.com/in/leimingyu" rel="me noopener">LinkedIn</a>.</span>
+        <span class="i18n-zh">邮箱链接需要启用 JavaScript。如未启用，请通过 <a href="https://linkedin.com/in/leimingyu" rel="me noopener">LinkedIn</a> 与我联系。</span>
+      </p>
+    </noscript>
+  </section>
+
+  <section id="research" aria-labelledby="research-h" hidden>
+    <h2 id="research-h">Research Interests</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>AI Workloads on GPUs</h3>
+        <p>LLM inference, ONNX optimization, fusion and quantization, tensor-core utilization.</p>
+      </div>
+      <div class="card">
+        <h3>GPU Architecture</h3>
+        <p>NVIDIA tensor cores, AMD RDNA 4, Intel Xe, Apple silicon, Google TPU v7 (Ironwood).</p>
+      </div>
+      <div class="card">
+        <h3>Ray Tracing &amp; Neural Rendering</h3>
+        <p>Gaussian splatting, NeRF, real-time rendering on modern GPUs.</p>
+      </div>
+      <div class="card">
+        <h3>Medical Imaging</h3>
+        <p>Monte Carlo photon transport, low-dose CT denoising, deep-learning reconstruction.</p>
+      </div>
+      <div class="card">
+        <h3>Performance Engineering</h3>
+        <p>Concurrent kernel analysis, benchmarking, modeling, and tuning across heterogeneous systems.</p>
+      </div>
+      <div class="card">
+        <h3>Tools &amp; Systems</h3>
+        <p>CUDA, OpenCL, Python, C, profiling tools, and developer-experience tooling.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      <span class="i18n-en">© <span id="yr"></span> Leiming Yu. Built with HTML, CSS, and care.</span>
+      <span class="i18n-zh">© <span id="yr-zh"></span> Leiming Yu。用 HTML 与 CSS 精心打造。</span>
+    </p>
+  </div>
+</footer>
+
+<button type="button" id="back-to-top" aria-label="Back to top" title="Back to top">
+  <span aria-hidden="true">↑</span>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
