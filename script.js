@@ -45,6 +45,10 @@ if (yr) yr.textContent = year;
 const yrZh = document.getElementById('yr-zh');
 if (yrZh) yrZh.textContent = year;
 
+// Respect the user's motion preference for programmatic scrolling
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const scrollBehavior = () => (prefersReducedMotion.matches ? 'auto' : 'smooth');
+
 // Back-to-top button
 const backToTop = document.getElementById('back-to-top');
 if (backToTop) {
@@ -54,7 +58,7 @@ if (backToTop) {
   toggle();
   window.addEventListener('scroll', toggle, { passive: true });
   backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: scrollBehavior() });
   });
 }
 
@@ -68,7 +72,7 @@ document.querySelectorAll('a.email-link').forEach(el => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
     const target = document.querySelector(el.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (target) target.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
     window.location.href = 'mailto:' + buildAddress(el);
   });
 });

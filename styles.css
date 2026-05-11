@@ -732,5 +732,61 @@ section h2::after {
   .news-body { grid-template-columns: 1fr; gap: 0.4rem; }
   .tag { align-self: flex-start; }
   .two-col { grid-template-columns: 1fr; gap: 1rem; }
-  .site-nav .container { gap: 0 1rem; overflow-x: auto; flex-wrap: nowrap; }
+
+  /* Horizontal-scroll nav with a right-edge fade hint */
+  .site-nav .container {
+    gap: 0 1rem;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .site-nav .container::-webkit-scrollbar { display: none; }
+  .site-nav a { white-space: nowrap; }
+  .site-nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 28px;
+    background: linear-gradient(to right, rgba(251, 250, 247, 0), rgba(251, 250, 247, 0.95));
+    pointer-events: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    .site-nav::after {
+      background: linear-gradient(to right, rgba(22, 21, 19, 0), rgba(22, 21, 19, 0.95));
+    }
+  }
+
+  /* Touch-friendly tap targets (≥44px) for pill buttons */
+  .lang-btn,
+  .filter-btn,
+  .talk-filter {
+    min-height: 44px;
+    padding: 0.55rem 0.95rem;
+  }
+  .lang-toggle { gap: 0; }
+  .pubs-meta,
+  .talks-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .filter-btn,
+  .talk-filter { margin-right: 0; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
