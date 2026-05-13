@@ -47,7 +47,7 @@ Don't put a plain `mailto:` link anywhere or this is defeated.
 
 ## Section anchors and nav highlighting
 
-Nav links point at `#bio`, `#cv`, `#news`, `#awards`, `#publications`, `#projects`, `#talks`, `#teaching`, `#contact`. `script.js:122-142` uses `IntersectionObserver` with `rootMargin: '-40% 0px -55% 0px'` to highlight the current section. New top-level `<section id="...">` blocks should also get a matching nav `<a>` to participate in highlighting.
+Nav links point at `#bio`, `#cv`, `#news`, `#awards`, `#certifications`, `#publications`, `#projects`, `#talks`, `#teaching`, `#contact`. `script.js:122-142` uses `IntersectionObserver` with `rootMargin: '-40% 0px -55% 0px'` to highlight the current section. New top-level `<section id="...">` blocks should also get a matching nav `<a>` to participate in highlighting.
 
 ## Design tokens
 
