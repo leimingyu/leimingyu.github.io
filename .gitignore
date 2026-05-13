@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Node (in case a local dev helper is ever added)
+node_modules/
+npm-debug.log*
+
+# Claude Code local settings (project-shared settings.json is fine to commit)
+.claude/settings.local.json
