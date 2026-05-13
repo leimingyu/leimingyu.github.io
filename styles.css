@@ -585,7 +585,18 @@ section h2::after {
   margin-bottom: 0.5rem;
 }
 .two-col ul { padding-left: 1rem; }
-.two-col li { font-size: 0.95rem; color: var(--ink-soft); }
+.two-col li { font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 0.35rem; }
+
+/* Subtle secondary link used for downloadable certificates */
+.cert-link {
+  display: block;
+  margin-top: 0.1rem;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+.cert-link:hover { color: var(--accent); }
 
 /* ---------- Back to top ---------- */
 #back-to-top {
