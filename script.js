@@ -5,7 +5,7 @@ const I18N_META = {
     backToTop: 'Back to top',
   },
   zh: {
-    title: '余磊明 — GPU 研究员',
+    title: '郁雷鸣 — GPU 研究员',
     backToTop: '回到顶部',
   }
 };
