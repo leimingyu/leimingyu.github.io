@@ -6,6 +6,56 @@
 <title>Leiming Yu — GPU Researcher</title>
 <meta name="description" content="Leiming Yu, Ph.D. — GPU researcher at Qualcomm. Work on GPU computing, AI inference, computer architecture, and medical imaging." />
 <meta name="author" content="Leiming Yu" />
+<link rel="canonical" href="https://leimingyu.github.io/" />
+
+<!-- Favicon: inline crimson "LY" monogram (no extra request) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%238b1d1d'/><text x='50%25' y='53%25' font-family='Georgia,serif' font-size='32' font-weight='700' fill='%23fbfaf7' text-anchor='middle' dominant-baseline='central'>LY</text></svg>" />
+
+<!-- Browser UI tint -->
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://leimingyu.github.io/" />
+<meta property="og:title" content="Leiming Yu, Ph.D. — GPU Researcher" />
+<meta property="og:description" content="Leiming Yu, Ph.D. — GPU researcher at Qualcomm. Work on GPU computing, AI inference, computer architecture, and medical imaging." />
+<meta property="og:image" content="https://leimingyu.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Leiming Yu, Ph.D. — GPU Researcher at Qualcomm" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="zh_CN" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@yu_leiming" />
+<meta name="twitter:title" content="Leiming Yu, Ph.D. — GPU Researcher" />
+<meta name="twitter:description" content="GPU researcher at Qualcomm. GPU computing, AI inference, computer architecture, medical imaging." />
+<meta name="twitter:image" content="https://leimingyu.github.io/og-image.png" />
+<meta name="twitter:image:alt" content="Leiming Yu, Ph.D. — GPU Researcher at Qualcomm" />
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Leiming Yu",
+  "honorificSuffix": "Ph.D.",
+  "url": "https://leimingyu.github.io/",
+  "image": "https://leimingyu.github.io/og-image.png",
+  "jobTitle": "GPU Researcher",
+  "worksFor": { "@type": "Organization", "name": "Qualcomm" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Northeastern University" },
+  "sameAs": [
+    "https://scholar.google.com/citations?user=d1IEkD8AAAAJ",
+    "https://github.com/leimingyu",
+    "https://linkedin.com/in/leimingyu",
+    "https://twitter.com/yu_leiming"
+  ]
+}
+</script>
+
 <link rel="stylesheet" href="styles.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +69,8 @@
   <div class="container header-grid">
     <div class="photo">
       <img src="profile.png"
+           width="160" height="160"
+           decoding="async" fetchpriority="high"
            onerror="this.onerror=null;this.src='https://www.gravatar.com/avatar/?d=mp&s=240';"
            alt="Portrait of Leiming Yu" />
     </div>
@@ -38,8 +90,8 @@
         <li><a href="https://leimingyu.github.io/files/LeimingYu_resume.pdf" target="_blank" rel="noopener">CV</a></li>
       </ul>
       <div class="lang-toggle" role="group" aria-label="Language">
-        <button type="button" class="lang-btn" data-lang="en">EN</button>
-        <button type="button" class="lang-btn" data-lang="zh">中</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">中</button>
       </div>
     </div>
   </div>
@@ -287,8 +339,8 @@
           <li><span class="i18n-en">Best Poster — HPC Day 2017</span><span class="i18n-zh">最佳海报 —— HPC Day 2017</span></li>
           <li><span class="i18n-en">Best Poster — HPC Day 2016</span><span class="i18n-zh">最佳海报 —— HPC Day 2016</span></li>
           <li><span class="i18n-en">"Most Robust" — GE Hackathon Challenge, 2017</span><span class="i18n-zh">"最稳健" 奖 —— GE 黑客马拉松，2017</span></li>
-          <li><span class="i18n-en">Student Travel Grant — IISWC 2017</span><span class="i18n-zh">学生差旅资助 —— IISWC 2017</span></li>
-          <li><span class="i18n-en">Student Travel Grant — PPoPP 2015</span><span class="i18n-zh">学生差旅资助 —— PPoPP 2015</span></li>
+          <li><span class="i18n-en">Student Travel Grant — IISWC 2017</span><span class="i18n-zh">学生旅行奖学金 —— IISWC 2017</span></li>
+          <li><span class="i18n-en">Student Travel Grant — PPoPP 2015</span><span class="i18n-zh">学生旅行奖学金 —— PPoPP 2015</span></li>
         </ul>
       </div>
       <div>
@@ -296,11 +348,11 @@
         <ul>
           <li>
             <em><a href="https://www.mdpi.com/journal/ai" rel="noopener">AI</a></em>, MDPI (2024)
-            <a class="cert-link" href="files/reviews/mdpi-oct2024.pdf" target="_blank" rel="noopener"><span class="i18n-en">↗ reviewer certificate</span><span class="i18n-zh">↗ 审稿人证书</span></a>
+            <a class="cert-link" href="files/reviews/mdpi-oct2024.pdf" target="_blank" rel="noopener"><span class="i18n-en">↗ combined reviewer certificate (AI · J. Imaging)</span><span class="i18n-zh">↗ 合并审稿人证书（AI · J. Imaging）</span></a>
           </li>
           <li>
             <em><a href="https://www.mdpi.com/journal/jimaging" rel="noopener">Journal of Imaging</a></em>, MDPI (2024)
-            <a class="cert-link" href="files/reviews/mdpi-oct2024.pdf" target="_blank" rel="noopener"><span class="i18n-en">↗ reviewer certificate</span><span class="i18n-zh">↗ 审稿人证书</span></a>
+            <a class="cert-link" href="files/reviews/mdpi-oct2024.pdf" target="_blank" rel="noopener"><span class="i18n-en">↗ combined reviewer certificate (AI · J. Imaging)</span><span class="i18n-zh">↗ 合并审稿人证书（AI · J. Imaging）</span></a>
           </li>
           <li>
             <em><a href="https://www.sciencedirect.com/journal/journal-of-parallel-and-distributed-computing" rel="noopener">Journal of Parallel and Distributed Computing</a></em>, Elsevier (2022)
@@ -377,13 +429,13 @@
     <p class="pubs-meta">
       <a href="https://scholar.google.com/citations?user=d1IEkD8AAAAJ" rel="noopener">Google Scholar</a>
       &nbsp;·&nbsp;
-      <button type="button" class="filter-btn active" data-filter="all"><span class="i18n-en">All</span><span class="i18n-zh">全部</span></button>
-      <button type="button" class="filter-btn" data-filter="journal"><span class="i18n-en">Journal</span><span class="i18n-zh">期刊</span></button>
-      <button type="button" class="filter-btn" data-filter="conference"><span class="i18n-en">Conference</span><span class="i18n-zh">会议</span></button>
-      <button type="button" class="filter-btn" data-filter="workshop"><span class="i18n-en">Workshop</span><span class="i18n-zh">研讨会</span></button>
+      <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true"><span class="i18n-en">All</span><span class="i18n-zh">全部</span></button>
+      <button type="button" class="filter-btn" data-filter="journal" aria-pressed="false"><span class="i18n-en">Journal</span><span class="i18n-zh">期刊</span></button>
+      <button type="button" class="filter-btn" data-filter="conference" aria-pressed="false"><span class="i18n-en">Conference</span><span class="i18n-zh">会议</span></button>
+      <button type="button" class="filter-btn" data-filter="workshop" aria-pressed="false"><span class="i18n-en">Workshop</span><span class="i18n-zh">研讨会</span></button>
     </p>
 
-    <ol class="pub-list" reversed>
+    <ol class="pub-list">
 
       <li class="pub" data-type="conference">
         <span class="year">2022</span>
@@ -651,9 +703,9 @@
     </h2>
 
     <p class="talks-meta">
-      <button type="button" class="talk-filter active" data-filter="all"><span class="i18n-en">All</span><span class="i18n-zh">全部</span></button>
-      <button type="button" class="talk-filter" data-filter="talk"><span class="i18n-en">Talks</span><span class="i18n-zh">报告</span></button>
-      <button type="button" class="talk-filter" data-filter="poster"><span class="i18n-en">Posters</span><span class="i18n-zh">海报</span></button>
+      <button type="button" class="talk-filter active" data-filter="all" aria-pressed="true"><span class="i18n-en">All</span><span class="i18n-zh">全部</span></button>
+      <button type="button" class="talk-filter" data-filter="talk" aria-pressed="false"><span class="i18n-en">Talks</span><span class="i18n-zh">报告</span></button>
+      <button type="button" class="talk-filter" data-filter="poster" aria-pressed="false"><span class="i18n-en">Posters</span><span class="i18n-zh">海报</span></button>
     </p>
 
     <ul class="talk-list">
@@ -836,35 +888,7 @@
     </noscript>
   </section>
 
-  <section id="research" aria-labelledby="research-h" hidden>
-    <h2 id="research-h">Research Interests</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>AI Workloads on GPUs</h3>
-        <p>LLM inference, ONNX optimization, fusion and quantization, tensor-core utilization.</p>
-      </div>
-      <div class="card">
-        <h3>GPU Architecture</h3>
-        <p>NVIDIA tensor cores, AMD RDNA 4, Intel Xe, Apple silicon, Google TPU v7 (Ironwood).</p>
-      </div>
-      <div class="card">
-        <h3>Ray Tracing &amp; Neural Rendering</h3>
-        <p>Gaussian splatting, NeRF, real-time rendering on modern GPUs.</p>
-      </div>
-      <div class="card">
-        <h3>Medical Imaging</h3>
-        <p>Monte Carlo photon transport, low-dose CT denoising, deep-learning reconstruction.</p>
-      </div>
-      <div class="card">
-        <h3>Performance Engineering</h3>
-        <p>Concurrent kernel analysis, benchmarking, modeling, and tuning across heterogeneous systems.</p>
-      </div>
-      <div class="card">
-        <h3>Tools &amp; Systems</h3>
-        <p>CUDA, OpenCL, Python, C, profiling tools, and developer-experience tooling.</p>
-      </div>
-    </div>
-  </section>
+  <div id="filter-status" class="visually-hidden" aria-live="polite"></div>
 
 </main>
 

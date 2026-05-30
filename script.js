@@ -3,12 +3,19 @@ const I18N_META = {
   en: {
     title: 'Leiming Yu — GPU Researcher',
     backToTop: 'Back to top',
+    pubsShown: (n) => `Showing ${n} publications`,
+    talksShown: (n) => `Showing ${n} talks`,
   },
   zh: {
     title: '郁雷鸣 — GPU 研究员',
     backToTop: '回到顶部',
+    pubsShown: (n) => `显示 ${n} 篇论文`,
+    talksShown: (n) => `显示 ${n} 场报告`,
   }
 };
+
+// Current UI language (mirrors <html lang>), defaulting to 'en'.
+const currentLang = () => (document.documentElement.lang === 'zh' ? 'zh' : 'en');
 
 (function initLang() {
   const stored = localStorage.getItem('site-lang');
@@ -27,7 +34,9 @@ const I18N_META = {
   function applyLang(lang) {
     document.documentElement.lang = lang;
     document.querySelectorAll('.lang-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.lang === lang);
+      const on = b.dataset.lang === lang;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', String(on));
     });
     document.title = I18N_META[lang].title;
     const bt = document.getElementById('back-to-top');
@@ -88,17 +97,25 @@ document.querySelectorAll('a.email-send').forEach(el => {
 // Publication filter
 const filterButtons = document.querySelectorAll('.filter-btn');
 const pubs = document.querySelectorAll('.pub');
+const filterStatus = document.getElementById('filter-status');
 
 filterButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const filter = btn.dataset.filter;
 
-    filterButtons.forEach(b => b.classList.toggle('active', b === btn));
+    filterButtons.forEach(b => {
+      const on = b === btn;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
 
+    let shown = 0;
     pubs.forEach(p => {
       const show = filter === 'all' || p.dataset.type === filter;
       p.classList.toggle('hidden', !show);
+      if (show) shown++;
     });
+    if (filterStatus) filterStatus.textContent = I18N_META[currentLang()].pubsShown(shown);
   });
 });
 
@@ -110,12 +127,19 @@ talkFilters.forEach(btn => {
   btn.addEventListener('click', () => {
     const filter = btn.dataset.filter;
 
-    talkFilters.forEach(b => b.classList.toggle('active', b === btn));
+    talkFilters.forEach(b => {
+      const on = b === btn;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
 
+    let shown = 0;
     talks.forEach(t => {
       const show = filter === 'all' || t.dataset.type === filter;
       t.classList.toggle('hidden', !show);
+      if (show) shown++;
     });
+    if (filterStatus) filterStatus.textContent = I18N_META[currentLang()].talksShown(shown);
   });
 });
 
@@ -132,7 +156,9 @@ if ('IntersectionObserver' in window && sections.length) {
         const id = entry.target.id;
         navLinks.forEach(a => {
           const isCurrent = a.getAttribute('href') === `#${id}`;
-          a.style.color = isCurrent ? 'var(--accent)' : '';
+          a.classList.toggle('is-current', isCurrent);
+          if (isCurrent) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
         });
       }
     });
