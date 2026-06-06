@@ -25,3 +25,6 @@ npm-debug.log*
 
 # Claude Code local settings (project-shared settings.json is fine to commit)
 .claude/settings.local.json
+
+# Visual brainstorming companion
+.superpowers/
