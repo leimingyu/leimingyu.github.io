@@ -1,16 +1,24 @@
 // Language toggle (EN / 中)
 const I18N_META = {
   en: {
-    title: 'Leiming Yu — GPU Researcher',
+    titles: {
+      home: 'Leiming Yu — GPU Researcher',
+      blog: 'Blog — Leiming Yu',
+    },
     backToTop: 'Back to top',
     pubsShown: (n) => `Showing ${n} publications`,
     talksShown: (n) => `Showing ${n} talks`,
+    blogShown: (n) => `Showing ${n} posts`,
   },
   zh: {
-    title: '郁雷鸣 — GPU 研究员',
+    titles: {
+      home: '郁雷鸣 — GPU 研究员',
+      blog: '博客 — 郁雷鸣',
+    },
     backToTop: '回到顶部',
     pubsShown: (n) => `显示 ${n} 篇论文`,
     talksShown: (n) => `显示 ${n} 场报告`,
+    blogShown: (n) => `显示 ${n} 篇博文`,
   }
 };
 
@@ -38,7 +46,10 @@ const currentLang = () => (document.documentElement.lang === 'zh' ? 'zh' : 'en')
       b.classList.toggle('active', on);
       b.setAttribute('aria-pressed', String(on));
     });
-    document.title = I18N_META[lang].title;
+    const titleKey = document.documentElement.dataset.titleKey;
+    if (titleKey && I18N_META[lang].titles[titleKey]) {
+      document.title = I18N_META[lang].titles[titleKey];
+    }
     const bt = document.getElementById('back-to-top');
     if (bt) {
       bt.setAttribute('aria-label', I18N_META[lang].backToTop);
