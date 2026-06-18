@@ -154,6 +154,31 @@ talkFilters.forEach(btn => {
   });
 });
 
+// Blog tag filter
+const blogFilters = document.querySelectorAll('.blog-filter');
+const posts = document.querySelectorAll('.post');
+
+blogFilters.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+
+    blogFilters.forEach(b => {
+      const on = b === btn;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+
+    let shown = 0;
+    posts.forEach(p => {
+      const tags = (p.dataset.tags || '').split(/\s+/).filter(Boolean);
+      const show = filter === 'all' || tags.includes(filter);
+      p.classList.toggle('hidden', !show);
+      if (show) shown++;
+    });
+    if (filterStatus) filterStatus.textContent = I18N_META[currentLang()].blogShown(shown);
+  });
+});
+
 // Highlight current section in nav as user scrolls
 const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
 const sections = Array.from(navLinks)

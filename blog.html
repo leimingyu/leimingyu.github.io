@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-title-key="blog"><!-- updated by JS based on user preference -->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog — Leiming Yu</title>
+<meta name="description" content="Writing by Leiming Yu — short, practical notes on GPU computing, AI inference, and computer architecture." />
+<meta name="author" content="Leiming Yu" />
+<link rel="canonical" href="https://leimingyu.github.io/blog.html" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%238b1d1d'/><text x='50%25' y='53%25' font-family='Georgia,serif' font-size='32' font-weight='700' fill='%23fbfaf7' text-anchor='middle' dominant-baseline='central'>LY</text></svg>" />
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://leimingyu.github.io/blog.html" />
+<meta property="og:title" content="Blog — Leiming Yu" />
+<meta property="og:description" content="Short, practical notes on GPU computing, AI inference, and computer architecture." />
+<meta property="og:image" content="https://leimingyu.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="zh_CN" />
+
+<link rel="stylesheet" href="/styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-grid">
+    <div class="photo">
+      <img src="/profile.png"
+           width="160" height="160"
+           decoding="async" fetchpriority="high"
+           onerror="this.onerror=null;this.src='https://www.gravatar.com/avatar/?d=mp&s=240';"
+           alt="Portrait of Leiming Yu" />
+    </div>
+    <div class="intro">
+      <h1>Leiming Yu, Ph.D.</h1>
+      <p class="title">
+        <span class="i18n-en">GPU Researcher · Qualcomm Graphics Research</span>
+        <span class="i18n-zh">GPU 研究员 · 高通图形研究</span>
+      </p>
+      <p class="tagline">在更高的地方遇见自己 — Meet yourself at a higher place.</p>
+      <ul class="links" aria-label="Links">
+        <li><a href="#" data-email-user="leimingyu830" data-email-domain="gmail.com" class="email-send">Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=d1IEkD8AAAAJ" rel="me noopener">Scholar</a></li>
+        <li><a href="https://github.com/leimingyu" rel="me noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/leimingyu" rel="me noopener">LinkedIn</a></li>
+        <li><a href="https://twitter.com/yu_leiming" rel="me noopener">Twitter</a></li>
+        <li><a href="https://leimingyu.github.io/files/LeimingYu_resume.pdf" target="_blank" rel="noopener">CV</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">中</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="container">
+      <a href="/#bio"><span class="i18n-en">Bio</span><span class="i18n-zh">简介</span></a>
+      <a href="/#cv"><span class="i18n-en">CV</span><span class="i18n-zh">履历</span></a>
+      <a href="/#news"><span class="i18n-en">News</span><span class="i18n-zh">动态</span></a>
+      <a href="/#awards"><span class="i18n-en">Awards</span><span class="i18n-zh">荣誉</span></a>
+      <a href="/#certifications"><span class="i18n-en">Certs</span><span class="i18n-zh">证书</span></a>
+      <a href="/#publications"><span class="i18n-en">Publications</span><span class="i18n-zh">论文</span></a>
+      <a href="/#projects"><span class="i18n-en">Projects</span><span class="i18n-zh">项目</span></a>
+      <a href="/#talks"><span class="i18n-en">Talks</span><span class="i18n-zh">报告</span></a>
+      <a href="/#teaching"><span class="i18n-en">Teaching</span><span class="i18n-zh">教学</span></a>
+      <a href="/blog.html" class="is-current" aria-current="true"><span class="i18n-en">Blog</span><span class="i18n-zh">博客</span></a>
+      <a href="/#contact"><span class="i18n-en">Contact</span><span class="i18n-zh">联系</span></a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="container">
+
+  <section id="blog" aria-labelledby="blog-h">
+    <h2 id="blog-h"><span class="i18n-en">Blog</span><span class="i18n-zh">博客</span></h2>
+
+    <p class="blog-meta">
+      <button type="button" class="blog-filter active" data-filter="all" aria-pressed="true"><span class="i18n-en">All</span><span class="i18n-zh">全部</span></button>
+      <button type="button" class="blog-filter" data-filter="meta" aria-pressed="false">Meta</button>
+    </p>
+
+    <ul class="post-list">
+
+      <li class="post" data-tags="meta" data-lang="en">
+        <span class="when">Jun 2026</span>
+        <div>
+          <a class="post-link" href="/blog/starting-a-blog.html">Starting a blog</a>
+          <span class="post-lang">EN</span>
+          <p class="post-tags"><span class="tag">Meta</span></p>
+          <p class="post-excerpt">
+            <span class="i18n-en">Why I'm starting a blog, and why it's three files and no build step.</span>
+            <span class="i18n-zh">为什么开始写博客——以及为什么它只是三个文件、没有构建步骤。</span>
+          </p>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <div id="filter-status" class="visually-hidden" aria-live="polite"></div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      <span class="i18n-en">© <span id="yr"></span> Leiming Yu. Built with HTML, CSS, and care.</span>
+      <span class="i18n-zh">© <span id="yr-zh"></span> Leiming Yu。用 HTML 与 CSS 精心打造。</span>
+    </p>
+  </div>
+</footer>
+
+<button type="button" id="back-to-top" aria-label="Back to top" title="Back to top">
+  <span aria-hidden="true">↑</span>
+</button>
+
+<script src="/script.js"></script>
+</body>
+</html>

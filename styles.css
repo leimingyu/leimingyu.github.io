@@ -768,6 +768,92 @@ section h2::after {
   .talk-filter { margin-right: 0; }
 }
 
+/* ---------- Blog index ---------- */
+.blog-meta {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.blog-filter {
+  font: inherit;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.blog-filter:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.blog-filter.active {
+  border-color: transparent;
+  color: #fff;
+  background: var(--accent-grad);
+}
+
+.post-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 0.25rem;
+}
+.post {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+}
+.post:last-child { border-bottom: none; }
+.post.hidden { display: none; }
+.post > .when {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding-top: 0.2rem;
+}
+.post-link {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  border-bottom: none;
+}
+.post-link:hover { color: var(--accent); }
+.post-lang {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+  vertical-align: middle;
+}
+.post-tags { margin-top: 0.4rem; }
+.post-tags .tag { margin-right: 0.3rem; }
+.post-excerpt {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin: 0.35rem 0 0;
+}
+@media (max-width: 640px) {
+  .blog-filter { min-height: 44px; padding: 0.55rem 0.95rem; }
+}
+
 /* ---------- Blog post page ---------- */
 .post-header {
   position: sticky;
