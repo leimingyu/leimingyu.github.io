@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Loop Engineering 101 — Leiming Yu</title>
+<meta name="description" content="Stop hand-prompting your coding agent. Design the closed feedback loop that prompts it for you — and knows when it's done." />
+<meta name="author" content="Leiming Yu" />
+<link rel="canonical" href="https://leimingyu.github.io/blog/loop-engineering-101.html" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%238b1d1d'/><text x='50%25' y='53%25' font-family='Georgia,serif' font-size='32' font-weight='700' fill='%23fbfaf7' text-anchor='middle' dominant-baseline='central'>LY</text></svg>" />
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#161513" media="(prefers-color-scheme: dark)" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leimingyu.github.io/blog/loop-engineering-101.html" />
+<meta property="og:title" content="Loop Engineering 101 — Leiming Yu" />
+<meta property="og:description" content="Stop hand-prompting your coding agent. Design the closed feedback loop that prompts it for you — and knows when it's done." />
+<meta property="og:image" content="https://leimingyu.github.io/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+
+<link rel="stylesheet" href="../styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ---- Post-scoped styling for "Loop Engineering 101" ---- */
+  .post-article{
+    --lp-fwd:#E4002B;   --lp-fwd-wash:#fde7ea;
+    --lp-fb:#C5208E;    --lp-fb-wash:#f9e3f1;
+    --lp-amber:#C2410C; --lp-amber-wash:#fdeee5;
+    --lp-surface-2:#f7f7fb;
+  }
+  @media (prefers-color-scheme: dark){
+    .post-article{
+      --lp-fwd:#FF3B57;   --lp-fwd-wash:#2a0e16;
+      --lp-fb:#E879C7;    --lp-fb-wash:#2a0e22;
+      --lp-amber:#FB923C; --lp-amber-wash:#2a1606;
+      --lp-surface-2:#171727;
+    }
+  }
+
+  .lp-secno{font-family:var(--mono);font-size:.8rem;font-weight:500;color:var(--accent);margin-right:.5rem;}
+  .post-article p.lp-lead{font-size:1.12rem;color:var(--ink-soft);}
+
+  /* control diagram */
+  .lp-figure{border:1px solid var(--rule);border-radius:12px;background:var(--surface);overflow:hidden;margin:1.5rem 0;}
+  .lp-figure-grid{
+    background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
+    background-size:26px 26px;padding:1.4rem 1.2rem 1rem;overflow-x:auto;
+  }
+  .lp-figure svg{display:block;width:100%;min-width:600px;}
+  .lp-figure figcaption{
+    font-family:var(--sans);font-size:.82rem;color:var(--muted);line-height:1.5;
+    padding:.8rem 1.1rem;border-top:1px solid var(--rule);background:var(--lp-surface-2);
+    text-align:left;margin:0;
+  }
+  .lp-figure figcaption b{color:var(--accent);font-weight:600;}
+  .lp-figure figcaption .fb{color:var(--lp-fb);font-weight:600;}
+  @media (prefers-reduced-motion: reduce){ .lp-signal{display:none;} }
+
+  /* quote pair */
+  .lp-quotes{display:grid;gap:.9rem;grid-template-columns:1fr 1fr;margin:1.2rem 0 1.6rem;}
+  .lp-q{border:1px solid var(--rule);border-radius:10px;padding:1.1rem 1.15rem;background:var(--surface);}
+  .lp-q p{font-family:var(--sans);font-weight:500;font-size:1rem;line-height:1.45;margin:0 0 .6rem;color:var(--ink);font-style:normal;}
+  .lp-q cite{font-style:normal;font-family:var(--mono);font-size:.74rem;color:var(--muted);}
+  .lp-q cite b{color:var(--accent);font-weight:600;}
+
+  /* definition + caution callouts */
+  .lp-def{border-left:3px solid var(--accent);background:var(--accent-soft);padding:1rem 1.2rem;border-radius:0 8px 8px 0;margin:1.2rem 0;}
+  .lp-def .lp-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.5rem;}
+  .lp-def p{margin:0;color:var(--ink);}
+  .lp-caution{border-left:3px solid var(--lp-amber);background:var(--lp-amber-wash);padding:.9rem 1.1rem;border-radius:0 8px 8px 0;margin:1.2rem 0;}
+  .lp-caution h4{font-family:var(--sans);font-weight:700;font-size:1rem;margin:0 0 .3rem;color:var(--lp-amber);}
+  .lp-caution p{margin:0;color:var(--ink-soft);font-size:.96rem;}
+
+  /* command block */
+  .lp-cmd{
+    position:relative;font-family:var(--mono);font-size:.82rem;line-height:1.6;
+    background:var(--lp-surface-2);border:1px solid var(--rule);border-left:3px solid var(--accent);
+    border-radius:0 8px 8px 0;padding:1.1rem 1.1rem .9rem;margin:.4rem 0 1.2rem;color:var(--ink);
+    white-space:pre-wrap;overflow-x:auto;
+  }
+  .lp-cmd .lbl{
+    position:absolute;top:0;right:.9rem;transform:translateY(-50%);
+    font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+    background:var(--surface);border:1px solid var(--rule);color:var(--muted);
+    padding:.2rem .55rem;border-radius:999px;
+  }
+  .lp-cmd .c{color:var(--accent);}
+  .lp-cmd .dim{color:var(--muted);}
+
+  /* primitive cards */
+  .lp-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1.2rem 0 1.6rem;}
+  .lp-card{border:1px solid var(--rule);border-radius:10px;padding:1rem 1rem .9rem;background:var(--surface);}
+  .lp-card .n{font-family:var(--mono);font-size:.7rem;color:var(--accent);letter-spacing:.1em;display:block;margin-bottom:.45rem;}
+  .lp-card h4{font-family:var(--sans);font-weight:700;font-size:1.02rem;margin:0 0 .3rem;color:var(--ink);}
+  .lp-card p{font-size:.9rem;color:var(--ink-soft);margin:0;line-height:1.5;}
+
+  /* tables */
+  .lp-table-scroll{overflow-x:auto;margin:1rem 0 1.4rem;border:1px solid var(--rule);border-radius:10px;}
+  .post-article table{border-collapse:collapse;width:100%;min-width:560px;font-size:.9rem;margin:0;}
+  .post-article thead th{
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);text-align:left;font-weight:500;padding:.8rem 1rem;
+    border-bottom:1px solid var(--rule);background:var(--lp-surface-2);
+  }
+  .post-article tbody td{padding:.8rem 1rem;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-soft);}
+  .post-article tbody tr:last-child td{border-bottom:none;}
+  .post-article tbody td:first-child{color:var(--ink);font-weight:600;font-family:var(--sans);}
+  .post-article tbody tr:nth-child(even){background:var(--lp-surface-2);}
+  .post-article td code{background:transparent;border:none;padding:0;color:var(--accent);font-size:.86em;}
+
+  /* gpu spotlight */
+  .lp-spotlight{border:1px solid var(--accent);border-radius:12px;background:var(--surface);padding:1.3rem 1.3rem 1.1rem;margin:1.4rem 0;}
+  .lp-spotlight .lp-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.6rem;}
+  .lp-spotlight h3{margin:0 0 .5rem;}
+  .lp-siglist{list-style:none;margin:.8rem 0 0;padding:0;display:grid;gap:.55rem;}
+  .lp-siglist li{position:relative;padding-left:1.5rem;font-size:.95rem;color:var(--ink-soft);line-height:1.5;}
+  .lp-siglist li::before{content:"";position:absolute;left:0;top:.5em;width:9px;height:9px;border-radius:50%;border:2px solid var(--accent);background:var(--accent-soft);}
+  .lp-siglist li b{color:var(--ink);font-weight:600;}
+
+  /* numbered steps */
+  ol.lp-steps{counter-reset:s;list-style:none;margin:.4rem 0 .8rem;padding:0;}
+  ol.lp-steps>li{position:relative;padding:0 0 .2rem 2.8rem;margin:0 0 1.4rem;}
+  ol.lp-steps>li::before{
+    counter-increment:s;content:counter(s);
+    position:absolute;left:0;top:1px;width:30px;height:30px;border-radius:8px;
+    display:grid;place-items:center;font-family:var(--mono);font-size:.85rem;font-weight:500;
+    color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);
+  }
+  ol.lp-steps h3{margin:0 0 .3rem;font-size:1.05rem;}
+  ol.lp-steps p{margin:0 0 .5rem;}
+
+  /* sources */
+  .lp-src{list-style:none;margin:.6rem 0 1rem;padding:0;display:grid;gap:.6rem;}
+  .lp-src li{position:relative;padding-left:1.1rem;color:var(--ink-soft);font-size:.96rem;line-height:1.5;}
+  .lp-src li::before{content:"\203A";position:absolute;left:0;color:var(--accent);}
+  .lp-src b{color:var(--ink);font-weight:600;}
+  .lp-note{font-family:var(--mono);font-size:.78rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:1rem;margin-top:.5rem;}
+
+  @media (max-width:640px){
+    .lp-quotes,.lp-cards{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="post-header">
+  <div class="container">
+    <div class="ph-left"><a href="../index.html">Leiming Yu</a></div>
+    <div class="ph-right">
+      <a href="../blog.html"><span class="i18n-en">← Blog</span><span class="i18n-zh">← 博客</span></a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">中</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <article class="post-article" lang="en">
+    <h1>Loop Engineering 101</h1>
+    <p class="post-article-meta">Jun 2026 · AI Agents ·
+      <span class="i18n-en">written in English</span><span class="i18n-zh">英文撰写</span></p>
+
+    <p class="lp-lead">
+      Stop hand-prompting your coding agent. Start designing the closed feedback
+      loop that prompts it for you — and knows when it's done. This is a primer on
+      loop engineering: what it is, why the leverage point moved up a level, and
+      how to build a loop you can trust to run unattended. Examples lean toward
+      graphics and GPU work, where the success signals happen to be unusually clean.
+    </p>
+
+    <figure class="lp-figure">
+      <div class="lp-figure-grid">
+        <svg viewBox="0 36 820 134" role="img" aria-labelledby="loopttl loopdesc">
+          <title id="loopttl">A closed agentic loop drawn as a control diagram</title>
+          <desc id="loopdesc">A success condition feeds a comparison; an agent writes code into a codebase; a verifier checks the output; on failure the signal returns to the agent, on success the loop exits.</desc>
+          <defs>
+            <marker id="af" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M1 1L9 5L1 9" fill="none" style="stroke:var(--lp-fwd)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+            <marker id="ab" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M1 1L9 5L1 9" fill="none" style="stroke:var(--lp-fb)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+
+          <!-- forward connectors -->
+          <line x1="148" y1="70" x2="169" y2="70" style="stroke:var(--lp-fwd)" stroke-width="1.6" marker-end="url(#af)"/>
+          <line x1="201" y1="70" x2="234" y2="70" style="stroke:var(--lp-fwd)" stroke-width="1.6" marker-end="url(#af)"/>
+          <line x1="376" y1="70" x2="410" y2="70" style="stroke:var(--lp-fwd)" stroke-width="1.6" marker-end="url(#af)"/>
+          <line x1="552" y1="70" x2="586" y2="70" style="stroke:var(--lp-fwd)" stroke-width="1.6" marker-end="url(#af)"/>
+          <line x1="738" y1="70" x2="761" y2="70" style="stroke:var(--lp-fwd)" stroke-width="1.6"/>
+          <line x1="769" y1="70" x2="805" y2="70" style="stroke:var(--lp-fwd)" stroke-width="1.6" marker-end="url(#af)"/>
+
+          <!-- feedback path -->
+          <path d="M765 74 L765 150 L186 150 L186 87" fill="none" style="stroke:var(--lp-fb)" stroke-width="1.6" marker-end="url(#ab)"/>
+
+          <!-- goal block -->
+          <rect x="20" y="44" width="128" height="52" rx="8" style="fill:var(--surface);stroke:var(--rule)" stroke-width="1"/>
+          <text x="84" y="67" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="15" style="fill:var(--ink)">Goal</text>
+          <text x="84" y="83" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" style="fill:var(--ink-soft)">success condition</text>
+
+          <!-- sum junction -->
+          <circle cx="186" cy="70" r="15" style="fill:var(--surface);stroke:var(--lp-fwd)" stroke-width="1.6"/>
+          <text x="186" y="75" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="15" style="fill:var(--lp-fwd)">&#931;</text>
+          <text x="166" y="63" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="11" style="fill:var(--ink-soft)">+</text>
+          <text x="170" y="92" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" style="fill:var(--lp-fb)">&#8722;</text>
+
+          <!-- agent block -->
+          <rect x="236" y="44" width="140" height="52" rx="8" style="fill:var(--surface);stroke:var(--rule)" stroke-width="1"/>
+          <text x="306" y="67" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="15" style="fill:var(--ink)">Agent</text>
+          <text x="306" y="83" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" style="fill:var(--ink-soft)">writes code</text>
+
+          <!-- codebase block -->
+          <rect x="412" y="44" width="140" height="52" rx="8" style="fill:var(--surface);stroke:var(--rule)" stroke-width="1"/>
+          <text x="482" y="67" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="15" style="fill:var(--ink)">Codebase</text>
+          <text x="482" y="83" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" style="fill:var(--ink-soft)">your repo</text>
+
+          <!-- verifier block -->
+          <rect x="588" y="44" width="150" height="52" rx="8" style="fill:var(--surface);stroke:var(--rule)" stroke-width="1"/>
+          <text x="663" y="67" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="15" style="fill:var(--ink)">Verifier</text>
+          <text x="663" y="83" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" style="fill:var(--ink-soft)">checks output</text>
+
+          <!-- junction + labels -->
+          <circle cx="765" cy="70" r="3.5" style="fill:var(--ink-soft)"/>
+          <text x="815" y="58" text-anchor="end" font-family="JetBrains Mono,monospace" font-weight="500" font-size="11" style="fill:var(--lp-fwd)">pass &#8594; exit</text>
+          <text x="475" y="142" text-anchor="middle" font-family="JetBrains Mono,monospace" font-weight="500" font-size="11" style="fill:var(--lp-fb)">fail &#8594; revise</text>
+
+          <!-- control-theory annotations -->
+          <text x="84"  y="110" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" style="fill:var(--muted)">setpoint</text>
+          <text x="186" y="110" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" style="fill:var(--muted)">compare</text>
+          <text x="306" y="110" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" style="fill:var(--muted)">controller</text>
+          <text x="482" y="110" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" style="fill:var(--muted)">plant</text>
+          <text x="663" y="110" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" style="fill:var(--muted)">sensor</text>
+
+          <!-- circulating signal -->
+          <g class="lp-signal">
+            <circle cx="0" cy="0" r="8" style="fill:var(--lp-fwd)" opacity="0.16"/>
+            <circle cx="0" cy="0" r="4.5" style="fill:var(--lp-fwd)"/>
+            <animateMotion dur="7s" repeatCount="indefinite" path="M186 70 L765 70 L765 150 L186 150 Z"/>
+          </g>
+        </svg>
+      </div>
+      <figcaption>The loop, as a control system. <b>Red</b> is the forward path; <span class="fb">magenta</span> is the feedback that closes it. When the error goes to zero — the success condition holds — the loop exits and hands off to you.</figcaption>
+    </figure>
+
+    <h2><span class="lp-secno">01</span>The shift: from prompting to loops</h2>
+    <p class="lp-lead">For about two years, getting work out of a coding agent meant a manual cycle: write a careful prompt, read what comes back, write the next one. The agent was a tool you held the whole time — and you were the feedback path.</p>
+    <p>That posture is what people now call an <strong>open loop</strong>. There is no automatic check on the output; a human inspects each turn and decides what happens next. It works, but it doesn't scale past the one conversation you're actively babysitting.</p>
+    <p>The new idea is to remove yourself from the per-turn path. You build a small system that finds the work, hands it to the agent, checks the result against a goal, records what's done, and decides the next move — then lets that system poke the agent instead of you. Two people at the center of agentic coding arrived at the same conclusion independently in June 2026:</p>
+
+    <div class="lp-quotes">
+      <div class="lp-q">
+        <p>You should be "designing loops that prompt your agents."</p>
+        <cite><b>Peter Steinberger</b> — creator of OpenClaw</cite>
+      </div>
+      <div class="lp-q">
+        <p>"I don't prompt Claude anymore." His job, he says, is to write the loops.</p>
+        <cite><b>Boris Cherny</b> — Claude Code, Anthropic</cite>
+      </div>
+    </div>
+
+    <div class="lp-def">
+      <span class="lp-tag">Definition</span>
+      <p>Loop engineering is designing the autonomous system that decides what to prompt an agent, when to prompt it, and whether the result is acceptable — then letting that system drive the agent, instead of you typing each turn.</p>
+    </div>
+    <p>The leverage point moved up a level. This is harder than prompt engineering, not easier: the difficulty shifts from wording a single instruction to designing a control system you can trust to run unattended.</p>
+
+    <h2><span class="lp-secno">02</span>Anatomy of a closed loop</h2>
+    <p class="lp-lead">The name is borrowed straight from control theory, which is why the diagram above reads the way it does. Every part maps onto a familiar block.</p>
+    <p>The <strong>success condition is your setpoint</strong>. The <strong>maker agent is the controller</strong>. The <strong>codebase is the plant</strong>. The <strong>verifier is the sensor and comparator</strong>. The agent acts, the verifier measures the result against the setpoint, and the resulting error — "not done yet" — drives another iteration. When the error reaches zero, the loop has converged: the condition holds, and it exits.</p>
+    <p>That return path is the entire concept. It's the one thing separating a loop that self-corrects from a one-shot run or a blind re-run. Two properties make the loop actually close, and both are easy to get wrong:</p>
+
+    <h3>1 · A machine-checkable success condition</h3>
+    <p>"Make it good" gives the loop no error signal, so it can never converge — the same reason you can't close a feedback loop around an output you can't measure. The condition has to be a hard predicate the system can evaluate by itself.</p>
+    <div class="lp-cmd"><span class="lbl">setpoint</span><span class="c">goal:</span> all tests in <span class="c">test/auth</span> pass <span class="dim">&amp;&amp;</span> lint is clean <span class="dim">&amp;&amp;</span> build succeeds</div>
+
+    <h3>2 · The maker and the checker are different</h3>
+    <p>The model that wrote the code is far too generous grading its own work. A second agent — different instructions, often a stronger model on higher effort — catches what the first one talked itself into. This <strong>maker &#8800; checker</strong> split is the only reason the loop's "done" means anything, and therefore the only reason you can walk away from it.</p>
+
+    <h2><span class="lp-secno">03</span>The building blocks</h2>
+    <p class="lp-lead">A loop needs five primitives plus one place to remember things. A year ago you wrote and maintained a pile of bash for this. Now the pieces ship inside the products — and the shape is nearly identical across them.</p>
+
+    <div class="lp-cards">
+      <div class="lp-card"><span class="n">01 · heartbeat</span><h4>Automations</h4><p>Scheduled runs that do discovery and triage on their own. This is what makes it a loop and not a single run you did once.</p></div>
+      <div class="lp-card"><span class="n">02 · isolation</span><h4>Worktrees</h4><p>Separate checkouts on their own branches, so two agents working in parallel can't overwrite each other's files.</p></div>
+      <div class="lp-card"><span class="n">03 · knowledge</span><h4>Skills</h4><p>Project conventions written down once (in a SKILL.md) so the agent reads them every run instead of re-guessing them.</p></div>
+      <div class="lp-card"><span class="n">04 · reach</span><h4>Plugins &amp; connectors</h4><p>MCP wiring into your real tools — issue tracker, database, staging API, chat — so the loop can act, not just suggest.</p></div>
+      <div class="lp-card"><span class="n">05 · review</span><h4>Sub-agents</h4><p>One agent has the idea, a different one checks it. This is where the maker/checker split physically lives.</p></div>
+      <div class="lp-card"><span class="n">06 · memory</span><h4>State, on disk</h4><p>A markdown file or board that holds what's done and what's next. The model forgets between runs; the repo doesn't.</p></div>
+    </div>
+
+    <p>The capability is the same across tools even when the names differ — once you notice that, you stop arguing about which tool and just design a loop that survives whichever one you're sitting in.</p>
+
+    <div class="lp-table-scroll">
+      <table>
+        <thead><tr><th>Primitive</th><th>Job in the loop</th><th>Claude Code</th><th>Codex</th></tr></thead>
+        <tbody>
+          <tr><td>Automations</td><td>Discovery + triage on a schedule</td><td><code>/loop</code>, cron tasks, hooks, GitHub Actions</td><td>Automations tab + Triage inbox</td></tr>
+          <tr><td>Worktrees</td><td>Isolate parallel features</td><td><code>git worktree</code>, <code>--worktree</code>, <code>isolation: worktree</code></td><td>Built-in worktree per thread</td></tr>
+          <tr><td>Skills</td><td>Codify project knowledge</td><td>Agent Skills (<code>SKILL.md</code>)</td><td>Agent Skills (<code>SKILL.md</code>)</td></tr>
+          <tr><td>Connectors</td><td>Touch your real tools</td><td>MCP servers + plugins</td><td>Connectors (MCP) + plugins</td></tr>
+          <tr><td>Sub-agents</td><td>Ideate, then verify</td><td><code>.claude/agents/</code>, agent teams</td><td><code>.codex/agents/</code> (TOML)</td></tr>
+          <tr><td>State</td><td>Track what's done</td><td>Markdown (<code>AGENTS.md</code>) or Linear via MCP</td><td>Markdown or Linear via connector</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2><span class="lp-secno">04</span>How to build one</h2>
+    <p class="lp-lead">You don't hand-roll a <code>while</code> loop anymore. The closing mechanism is a shipped primitive — your job is to give it a real target and a trustworthy judge.</p>
+
+    <ol class="lp-steps">
+      <li>
+        <h3>Write a checkable goal</h3>
+        <p>State the exit predicate precisely and make every clause something the system can evaluate without you. This is your setpoint.</p>
+      </li>
+      <li>
+        <h3>Use <code>/goal</code> to run until it's true</h3>
+        <p>Both Claude Code and Codex have a <code>/goal</code> primitive that keeps working across turns until a condition you wrote actually holds — and after every turn, a separate small model decides whether it's done, so the writer isn't the grader. (<code>/loop</code> just re-runs on a cadence: that's the open-loop heartbeat. <code>/goal</code> is what closes it.)</p>
+        <div class="lp-cmd"><span class="lbl">claude code · codex</span><span class="c">/goal</span> "all tests in test/auth pass and lint is clean"</div>
+      </li>
+      <li>
+        <h3>Split the maker from the checker</h3>
+        <p>Define your agents as files — <code>.claude/agents/</code> in Claude Code, <code>.codex/agents/*.toml</code> in Codex. Make the verifier a stronger model on higher reasoning effort; let the explorer be something fast. Spend the extra tokens where a second opinion is worth paying for.</p>
+      </li>
+      <li>
+        <h3>Give it memory and a schedule</h3>
+        <p>A state file plus an automation turns one run into a standing loop: the schedule re-fires it, and the state file lets tomorrow's run pick up where today's stopped.</p>
+      </li>
+    </ol>
+
+    <h2><span class="lp-secno">05</span>The engine: the <code>/goal</code> command</h2>
+    <p class="lp-lead">Everything above leans on one Claude Code primitive. <code>/goal</code> is what turns a normal session into a run-until-done loop — the built-in version of the keep-going loops people used to hand-roll in bash. In the control diagram at the top, it's the comparator.</p>
+
+    <p>Normally Claude takes a turn and hands control back to you. You give <code>/goal</code> a finish line instead — <code>/goal all tests in test/auth pass and the lint step is clean</code> — and it starts a turn immediately with that condition as the directive. After every turn a separate, smaller model (Haiku by default) reads the conversation and answers one question: is the condition met? A "no" comes back with a short reason, and that reason becomes the instruction for the next turn. A "yes" clears the goal and hands control back. Under the hood it's a thin wrapper over a session-scoped Stop hook — which is also why it runs only in a trusted workspace with hooks enabled.</p>
+
+    <div class="lp-caution">
+      <h4>The evaluator reads — it does not run</h4>
+      <p>The checker is a separate model, but not an independent check: it only reads the transcript, runs nothing itself, and sees only what the worker wrote down. If Claude writes "fixed" without actually running the check and printing the output, the evaluator returns "not yet verified" and the turn continues. The condition has to be something the worker's own printed output can prove.</p>
+    </div>
+
+    <h3>Write a condition, not a wish</h3>
+    <p>A strong condition combines three things: a check that does the verifying, a measurable end state, and a constraint that must not change. Each clause flips cleanly from false to true.</p>
+    <div class="lp-cmd"><span class="lbl">a condition it can prove</span><span class="c">/goal</span> npm test exits 0, git status shows no uncommitted changes, and no file in src/auth exceeds 200 lines</div>
+    <p>A vague ask has no point where it objectively becomes true, so the loop either churns on something it can't finish or quietly decides it's done. This is the single most common way <code>/goal</code> goes wrong:</p>
+    <div class="lp-cmd"><span class="lbl">a condition it can't prove</span><span class="c">/goal</span> clean up the code and make it nicer   <span class="dim"># no measurable flip from "messy" to "clean"</span></div>
+
+    <h3>The command surface</h3>
+    <div class="lp-table-scroll">
+      <table>
+        <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td><code>/goal &lt;condition&gt;</code></td><td>Set or replace the goal — starts a turn immediately. One per session; condition up to ~4,000 characters.</td></tr>
+          <tr><td><code>/goal</code></td><td>Show status: runtime, turns and tokens spent, and the evaluator's last reason. A &#9678; /goal active indicator shows while it runs.</td></tr>
+          <tr><td><code>/goal clear</code></td><td>Stop the goal. Aliases: <code>stop</code>, <code>off</code>, <code>reset</code>, <code>none</code>, <code>cancel</code>. Ctrl+C also kills it; <code>/clear</code> clears it too.</td></tr>
+          <tr><td><code>claude -p "/goal &#8230;"</code></td><td>Run the whole loop to completion headless, in a single invocation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>It needs Claude Code v2.1.139 or later, plus a workspace whose trust dialog you've accepted and hooks left enabled. A goal still active when a session ends is restored when you resume with <code>--resume</code> or <code>--continue</code>. Always cap a condition with a clause like "or stop after N turns" — but that bound is judged by the model from the transcript, not enforced as a hard mechanical stop, so Ctrl+C stays your real kill switch.</p>
+
+    <h3>When it's <code>/goal</code> and when it's <code>/loop</code></h3>
+    <p><code>/goal</code> is progress-driven: the next turn starts the moment the last one finishes, and it stops when the evaluator confirms you're done. <code>/loop</code> is clock-driven: it re-runs a prompt on a time interval and stops when you say so. Reach for <code>/goal</code> when you're pushing work to a finish line, and <code>/loop</code> when you're polling for something external to change — a deploy finishing, a build going green, new reviews landing on a PR. The <code>loop-research</code> example below is a <code>/goal</code>: it pushes toward a verified report, then stops.</p>
+
+    <h2><span class="lp-secno">06</span>A loop in practice</h2>
+    <p class="lp-lead">Stack the pieces and one thread becomes a small control panel that runs while you sleep.</p>
+    <p>An automation fires every morning on the repo. Its prompt calls a triage skill that reads yesterday's CI failures, the open issues, and recent commits, and writes the findings to a state file. For each finding worth doing, the thread opens an isolated worktree and sends a maker sub-agent to draft a fix; a second sub-agent reviews that draft against the project's skills and existing tests. Connectors open the PR and update the ticket; anything the loop can't handle lands in a triage inbox for you. You designed that once — you prompted none of those steps.</p>
+
+    <div class="lp-spotlight">
+      <span class="lp-tag">For graphics &amp; GPU work</span>
+      <h3>Your domain is unusually loop-friendly</h3>
+      <p>The thing a closed loop needs most — an objective, machine-checkable signal — is exactly what graphics and GPU work produces in abundance. These make far better setpoints than "looks right," and they're the difference between a loop that converges and one that drifts:</p>
+      <ul class="lp-siglist">
+        <li><b>Compilation is clean</b> — the shader or kernel builds with no errors or new warnings.</li>
+        <li><b>Golden-image diff under threshold</b> — SSIM / PSNR against a reference frame stays above a set bar.</li>
+        <li><b>Validation layers are silent</b> — zero Vulkan / D3D validation or debug-layer messages on the run.</li>
+        <li><b>Frame time within budget</b> — a fixed scene or captured replay renders under N ms on target hardware.</li>
+        <li><b>Perf counters in band</b> — occupancy, memory bandwidth, or stall deltas stay within an allowed window.</li>
+        <li><b>Conformance / unit suite green</b> — the existing test corpus passes end to end.</li>
+      </ul>
+    </div>
+
+    <h2><span class="lp-secno">07</span>What the loop doesn't do for you</h2>
+    <p class="lp-lead">The loop changes the work; it does not delete you from it. Three problems get sharper as the loop gets better — not easier.</p>
+
+    <div class="lp-caution">
+      <h4>Verification is still yours</h4>
+      <p>A loop running unattended is also a loop making mistakes unattended. Splitting the verifier is what makes "done" mean something — but even then, "done" is a claim, not a proof. Ship code you confirmed works.</p>
+    </div>
+    <div class="lp-caution">
+      <h4>Comprehension debt compounds</h4>
+      <p>The faster the loop ships code you didn't write, the wider the gap between what exists and what you actually understand. A smooth loop just grows that gap faster — unless you read the diffs.</p>
+    </div>
+    <div class="lp-caution">
+      <h4>The comfortable posture is the dangerous one</h4>
+      <p>When the loop runs itself, it's tempting to stop having an opinion and accept whatever it returns. Designing the loop is the cure when you do it with judgment, and the accelerant when you do it to avoid thinking. Same action, opposite result — and the loop can't tell which one you're doing. You can.</p>
+    </div>
+
+    <h2><span class="lp-secno">08</span>Worked example: <code>loop-research</code></h2>
+    <p class="lp-lead">A concrete closed loop for Claude Code: hand it a topic, and it researches, writes a report and a slide deck, fact-checks every claim, critiques its own work, and keeps refining until the data is fully verified and only one minor suggestion remains — then does a final read-through and stops.</p>
+
+    <p>It maps cleanly onto the anatomy from section 02. The only Claude-Code-specific piece you need is <code>/goal</code>: it runs turn after turn until a separate, smaller evaluator model (Haiku) confirms your condition holds.</p>
+
+    <div class="lp-table-scroll">
+      <table>
+        <thead><tr><th>Control role</th><th>In loop-research</th></tr></thead>
+        <tbody>
+          <tr><td>Setpoint</td><td>0 unverified data points · at most 1 minor suggestion · final review passed</td></tr>
+          <tr><td>Controller</td><td>The main <code>/goal</code> session — researches, writes <code>report.md</code> + <code>slides.md</code>, renders the deck, applies fixes</td></tr>
+          <tr><td>Plant</td><td>The deliverables: <code>report.md</code>, <code>slides.md</code>, <code>slides.pptx</code></td></tr>
+          <tr><td>Sensor</td><td>Two read-only sub-agents — a <strong>verifier</strong> (data, links, tables, figures) and a <strong>critic</strong> (improvement suggestions)</td></tr>
+          <tr><td>Comparator</td><td>The <code>/goal</code> evaluator, reading a STATUS block each turn</td></tr>
+          <tr><td>Feedback</td><td>Failed ledger rows + open suggestions become the next turn's work</td></tr>
+          <tr><td>Memory</td><td><code>verification.md</code> + <code>suggestions.md</code> + the sources on disk</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="lp-caution">
+      <h4>The one gotcha that dictates the whole design</h4>
+      <p>The <code>/goal</code> evaluator only reads the transcript — it never runs commands or opens files itself. So verification has to be done by the worker and <strong>printed into the conversation</strong>. That's why loop-research uses a real verifier sub-agent and ends every turn with a machine-readable STATUS block: the evaluator decides "done" by reading that block, not by trusting a "looks correct."</p>
+    </div>
+
+    <h3>Set it up</h3>
+    <ol class="lp-steps">
+      <li>
+        <h3>Check prerequisites</h3>
+        <p><code>/goal</code> needs Claude Code v2.1.139 or later, a workspace you've accepted the trust dialog for, and hooks enabled (it's a wrapper over a Stop hook). Work from your project root.</p>
+        <div class="lp-cmd"><span class="lbl">shell</span>claude --version   <span class="dim"># need &#8805; 2.1.139</span>
+cd ~/projects/research-loop</div>
+      </li>
+      <li>
+        <h3>Create the two checker sub-agents</h3>
+        <p>Both are read-only — they inspect and report, never edit. Keeping the maker (your main session) apart from these checkers is the maker &#8800; checker split made real. Bump the verifier to a stronger model if accuracy matters more than cost.</p>
+        <div class="lp-cmd"><span class="lbl">sub-agent · read-only</span><span class="dim"># .claude/agents/loop-research-verifier.md</span>
+---
+name: loop-research-verifier
+description: Fact-check a research report and slide outline. Verifies every data point, link, table, and figure against primary sources and returns a ledger. Read-only.
+tools: Read, Grep, Glob, WebSearch, WebFetch
+model: sonnet
+---
+You are a meticulous fact-checker. You are given report.md and slides.md.
+
+For every checkable claim — statistics, dates, named facts, quotes, table cells, chart/figure values — and every URL:
+- Open each link with WebFetch; confirm it loads and actually supports the claim.
+- Cross-check each number or fact against at least one primary source.
+- Flag anything fabricated, unsupported, stale, or internally inconsistent (totals that don't add up, a caption that disagrees with its data).
+
+Return ONLY a markdown ledger, one row per data point:
+| id | claim | source | status | note |
+status is VERIFIED or FAILED; for FAILED, the note says what is wrong and the correct value if known.
+End with: LEDGER: &lt;verified&gt;/&lt;total&gt; verified
+Never edit files. Never soften a FAILED to VERIFIED.</div>
+
+        <div class="lp-cmd"><span class="lbl">sub-agent · read-only</span><span class="dim"># .claude/agents/loop-research-critic.md</span>
+---
+name: loop-research-critic
+description: Critique a research report and slide deck. Returns a ranked list of concrete improvement suggestions with severities. Read-only.
+tools: Read, Grep, Glob
+model: sonnet
+---
+You are a demanding editor and presentation reviewer, given report.md and slides.md.
+
+Review argument quality, clarity, evidence, narrative flow, and slide design (one idea per slide, readable density, logical order). Be specific and point to the exact section or slide.
+
+Return ONLY a markdown list:
+- [severity] suggestion — where
+severity is blocker, major, or minor; list blockers first. Raise blocker/major only when correctness or usefulness is materially affected — do not inflate severities or invent trivia to pad the list.
+End with: OPEN: &lt;b&gt; blocker, &lt;m&gt; major, &lt;k&gt; minor
+Never edit files.</div>
+      </li>
+      <li>
+        <h3>Create the loop-research skill</h3>
+        <p>The skill is the recipe: how to handle the topic and language, what to do each turn, where files live, and when to stop. Those files on disk are the loop's memory — the sub-agents start fresh every turn, but the report and ledgers persist.</p>
+        <div class="lp-cmd"><span class="lbl">skill</span><span class="dim"># .claude/skills/loop-research/SKILL.md</span>
+---
+name: loop-research
+description: Iteratively research a topic and produce a verified report and slide deck, refining until the data is fully verified and at most one minor suggestion remains. Topic may be English or Chinese; output is English unless Chinese is requested.
+---
+# loop-research
+
+## Inputs
+- TOPIC — the subject (may be English or Chinese).
+- OUTPUT_LANG — `en` by default. If the request says Chinese / 中文 / --lang zh, set `zh` and write ALL deliverables in Chinese. The topic's own language never changes OUTPUT_LANG.
+
+## Canonical files, in ./loop-research/&lt;slug&gt;/
+- report.md        the report (source of truth)
+- slides.md        the deck outline, one H2 per slide (source of truth)
+- slides.pptx      rendered from slides.md with python-pptx
+- verification.md  latest ledger from the verifier
+- suggestions.md   open/closed suggestions with severities
+
+## Each turn
+1. If report.md / slides.md don't exist, research TOPIC (WebSearch/WebFetch) and draft both in OUTPUT_LANG.
+2. Apply every FAILED row in verification.md and every accepted open suggestion in suggestions.md; re-render slides.pptx.
+3. Delegate to loop-research-verifier on report.md + slides.md; save its ledger to verification.md.
+4. Delegate to loop-research-critic on report.md + slides.md; merge into suggestions.md (keep severities, close resolved ones).
+5. End the turn by printing the verifier summary, the open-suggestion counts, and the STATUS block below.
+
+## Stop rule
+When 0 data points are FAILED AND open suggestions are 0 blocker + 0 major + at most 1 minor: do ONE final review — re-read report.md and slides.md end to end, open slides.pptx to confirm it renders, fix anything trivial — then set final_review.
+
+## Print at the end of EVERY turn, verbatim
+=== LOOP-RESEARCH STATUS ===
+verified: &lt;n&gt;/&lt;total&gt;
+open: &lt;b&gt; blocker, &lt;m&gt; major, &lt;k&gt; minor
+final_review: &lt;PASS|PENDING|FAILED&gt;
+============================</div>
+      </li>
+      <li>
+        <h3>Let it run hands-off (optional)</h3>
+        <p><code>/goal</code> drops the approval prompt <em>between</em> turns, but tool calls <em>within</em> a turn still ask unless you enable Auto mode. Turn on Auto mode — your session's autonomy toggle — so each turn runs unattended.</p>
+      </li>
+      <li>
+        <h3>Kick off the goal</h3>
+        <p>The condition reads the STATUS block, not the work itself. The <code>stop after N turns</code> clause is your safety cap — a critic can always find one more thing, so the loop needs a hard ceiling.</p>
+        <div class="lp-cmd"><span class="lbl">in session</span>/goal Using the loop-research skill, produce a verified report and slide deck on "&lt;your topic&gt;" (output in English). Met only when the latest LOOP-RESEARCH STATUS shows verified == total with 0 FAILED, open is 0 blocker and 0 major and at most 1 minor, and final_review: PASS. Stop after 25 turns regardless.</div>
+        <p>For a Chinese deliverable, swap the parenthetical to <code>(output in Chinese / 中文)</code>. To run it headless instead of interactively:</p>
+        <div class="lp-cmd"><span class="lbl">shell · non-interactive</span>claude -p "/goal Using the loop-research skill &#8230; final_review: PASS. Stop after 25 turns."</div>
+      </li>
+      <li>
+        <h3>Watch and stop</h3>
+        <p>A <span style="white-space:nowrap">&#9678; /goal active</span> indicator shows runtime. Type <code>/goal</code> for status and the evaluator's last reason; <code>/goal clear</code> (or Ctrl+C in headless) stops it early. Otherwise it stops itself the moment <code>final_review</code> reads PASS — or at the turn cap.</p>
+      </li>
+    </ol>
+
+    <p>Notice the shape: you set this up once. After that, no turn is hand-prompted — the verifier and critic generate the feedback, the worker acts on it, and the evaluator decides when the data is clean and the deck is done. That is the closed loop from the top of this post, pointed at research instead of code.</p>
+
+    <h2>Where this comes from</h2>
+    <ul class="lp-src">
+      <li><b>Addy Osmani — "Loop Engineering"</b> (addyosmani.com). Named the practice and gave it the five-primitives-plus-memory anatomy used here.</li>
+      <li><b>Peter Steinberger</b> (@steipete, creator of OpenClaw) and <b>Boris Cherny</b> (Claude Code, Anthropic) — the framing that prompting is being replaced by loop design.</li>
+      <li><b>Secondary explainers</b> — Cobus Greyling's "Loop Engineering," and Latent Space's "Loopcraft," which tie the threads together.</li>
+    </ul>
+    <p class="lp-note">Synthesizes the June 2026 loop-engineering discourse. Tool-specific commands (<code>/goal</code>, <code>/loop</code>, agent directories) evolve quickly — verify against current Claude Code and Codex documentation before relying on exact syntax.</p>
+
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      <span class="i18n-en">© <span id="yr"></span> Leiming Yu. Built with HTML, CSS, and care.</span>
+      <span class="i18n-zh">© <span id="yr-zh"></span> Leiming Yu。用 HTML 与 CSS 精心打造。</span>
+    </p>
+  </div>
+</footer>
+
+<button type="button" id="back-to-top" aria-label="Back to top" title="Back to top">
+  <span aria-hidden="true">↑</span>
+</button>
+
+<script src="../script.js"></script>
+</body>
+</html>
